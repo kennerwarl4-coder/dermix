@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kit Rotina Anti-Acne Dermix + Acnexis-02</title>
+  <meta name="description"
+    content="Kit anti-acne masculino com 5 itens para controle de oleosidade, cravos e espinhas. Frete grátis, 4x sem juros.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+            body: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+          },
+          borderRadius: {
+            card: '12px',
+            btn: '10px',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #FFFFFF;
+      color: #000000;
+      font-family: 'Instrument Sans', system-ui, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-display {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      text-wrap: balance;
+      letter-spacing: -0.01em;
+    }
+
+    section[id] {
+      scroll-margin-top: 240px;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .tabnum {
+      font-variant-numeric: tabular-nums;
+    }
+
+    ::selection {
+      background: #000000;
+      color: #FFFFFF;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 2px solid #000000;
+      outline-offset: 2px;
+    }
+
+    .faq-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.25s ease;
+    }
+
+    .faq-panel>div {
+      overflow: hidden;
+    }
+
+    .faq-item[data-open="true"] .faq-panel {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-item[data-open="true"] .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-chevron {
+      transition: transform 0.2s ease;
+    }
+
+    .marquee-track {
+      animation: marquee 22s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track {
+        animation: none;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .thumb-active {
+      border-color: #000000 !important;
+    }
+
+    .mobile-nav {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease;
+    }
+
+    .mobile-nav.open {
+      max-height: 320px;
+    }
+
+    .star {
+      color: #F2A324;
+    }
+
+    .result-modal {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .result-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .result-filter-btn.active {
+      background: #000000;
+      color: #FFFFFF;
+      border-color: #000000;
+    }
+
+    .scrollbar-none::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-none {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .results-carousel {
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .results-carousel>* {
+      scroll-snap-align: start;
+    }
+
+    .result-dot {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black font-body">
+
+  <div class="sticky top-0 z-50">
+    <div class="bg-black text-white text-xs sm:text-sm">
+      <div
+        class="max-w-[1200px] mx-auto px-4 h-9 flex items-center justify-center text-center overflow-hidden whitespace-nowrap">
+        <span class="truncate">Frete grátis para todo o Brasil &nbsp;·&nbsp; 4x sem juros &nbsp;·&nbsp; Kit anti-acne
+          com 5 itens</span>
+      </div>
+    </div>
+
+    <header class="bg-white/95 backdrop-blur border-b border-black/10">
+      <div class="max-w-[1200px] mx-auto px-4 py-3 sm:py-4 flex items-center justify-between gap-4 flex-wrap">
+        <a href="#kit" class="flex items-center shrink-0">
+          <img src="assets/logo-crop.png" alt="DERMIX" class="h-12 sm:h-24 lg:h-32 w-auto">
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 lg:gap-7 text-sm text-black/60 font-medium">
+          <a href="#kit" class="hover:text-black transition-colors">Kit</a>
+          <a href="#rotina" class="hover:text-black transition-colors">Rotina</a>
+          <a href="#resultados" class="hover:text-black transition-colors font-semibold text-black">Resultados</a>
+          <a href="#itens" class="hover:text-black transition-colors">Os 5 itens</a>
+          <a href="#avaliacoes" class="hover:text-black transition-colors">Avaliações</a>
+          <a href="#duvidas" class="hover:text-black transition-colors">Dúvidas</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button id="cartBtn" type="button" aria-label="Ver carrinho"
+            class="relative flex items-center gap-2 h-10 px-3 rounded-btn border border-black/15">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="19" cy="21" r="1" />
+              <path d="M2.5 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L21 8H6" />
+            </svg>
+            <span class="hidden sm:inline text-sm font-semibold">Carrinho</span>
+            <span id="cartCount"
+              class="tabnum bg-black text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center">1</span>
+          </button>
+          <button id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false"
+            class="md:hidden w-10 h-10 flex items-center justify-center rounded-btn border border-black/15">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round">
+              <line x1="4" y1="7" x2="20" y2="7" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="17" x2="20" y2="17" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav id="mobileNav" class="mobile-nav md:hidden border-t border-black/10 bg-white">
+        <div class="max-w-[1200px] mx-auto px-4 py-3 flex flex-col text-sm text-black/60 font-medium">
+          <a href="#kit" class="py-2.5 border-b border-black/10">Kit</a>
+          <a href="#rotina" class="py-2.5 border-b border-black/10">Rotina</a>
+          <a href="#resultados" class="py-2.5 border-b border-black/10 font-semibold text-black">Resultados</a>
+          <a href="#itens" class="py-2.5 border-b border-black/10">Os 5 itens</a>
+          <a href="#avaliacoes" class="py-2.5 border-b border-black/10">Avaliações</a>
+          <a href="#duvidas" class="py-2.5">Dúvidas</a>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <div class="max-w-[1200px] mx-auto px-4 pt-4 text-xs text-black/60">
+    <span>Início</span> <span class="mx-1">/</span> <span>Skincare masculino</span> <span class="mx-1">/</span> <span
+      class="text-black">Kit Rotina Anti-Acne Dermix + Acnexis-02</span>
+  </div>
+
+  <main>
+
+    <section id="kit" class="max-w-[1200px] mx-auto px-4 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+
+        <div>
+          <div class="relative bg-white border border-black/10 rounded-card p-3 sm:p-5">
+            <span class="absolute top-3 left-3 z-10 bg-black text-white text-xs font-bold px-3 py-1.5 rounded-full">−39%
+              no kit</span>
+            <div
+              class="absolute top-3 right-3 z-10 flex bg-white border border-black/15 rounded-full p-1 text-xs font-semibold">
+              <button type="button" id="toggleKit" aria-pressed="true"
+                class="view-toggle px-3 py-1.5 rounded-full bg-black text-white transition-colors">Kit montado</button>
+              <button type="button" id="toggleParts" aria-pressed="false"
+                class="view-toggle px-3 py-1.5 rounded-full text-black/60 transition-colors">Peças separadas</button>
+            </div>
+            <img id="mainProductImage" src="assets/capa-product01.png"
+              alt="Kit Rotina Anti-Acne Dermix com os 5 itens e a caixa lado a lado"
+              class="w-full aspect-square object-contain rounded-[10px] mt-9">
+          </div>
+
+          <div class="flex gap-2 sm:gap-3 mt-3">
+            <button type="button"
+              class="thumb-btn thumb-active w-16 h-16 sm:w-20 sm:h-20 shrink-0 border-2 border-black/10 rounded-btn overflow-hidden bg-white"
+              data-src="assets/capa-product01.png"
+              data-alt="Kit Rotina Anti-Acne Dermix com os 5 itens e a caixa lado a lado">
+              <img src="assets/capa-product01.png" alt="" class="w-full h-full object-contain">
+            </button>
+            <button type="button"
+              class="thumb-btn w-16 h-16 sm:w-20 sm:h-20 shrink-0 border-2 border-black/10 rounded-btn overflow-hidden bg-white"
+              data-src="assets/capa-produto-02.png"
+              data-alt="Kit Rotina Anti-Acne Dermix com detalhe em close de cada um dos 5 itens">
+              <img src="assets/capa-produto-02.png" alt="" class="w-full h-full object-contain">
+            </button>
+            <button type="button"
+              class="thumb-btn w-16 h-16 sm:w-20 sm:h-20 shrink-0 border-2 border-black/10 rounded-btn overflow-hidden bg-white"
+              data-src="assets/capa-product-03.png"
+              data-alt="Os 5 itens do Kit Rotina Anti-Acne Dermix dispostos separadamente ao lado da caixa">
+              <img src="assets/capa-product-03.png" alt="" class="w-full h-full object-contain">
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-black/60">Kit anti-acne masculino · 5 itens</p>
+          <h1 class="text-[32px] sm:text-[40px] font-bold leading-[1.08] mt-2">Kit Rotina Anti-Acne Dermix + Acnexis-02
+          </h1>
+          <p class="text-black/60 text-base mt-3">5 produtos, 2 passos por dia. Tudo que você precisa pra colocar a
+            oleosidade, os cravos e as espinhas sob controle — sem complicar a rotina.</p>
+
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span
+              class="bg-black/5 border border-black/15 text-black text-xs font-semibold px-3 py-1.5 rounded-full">Limpeza</span>
+            <span
+              class="bg-black/5 border border-black/15 text-black text-xs font-semibold px-3 py-1.5 rounded-full">Acnexis-02</span>
+            <span
+              class="bg-black/5 border border-black/15 text-black text-xs font-semibold px-3 py-1.5 rounded-full">Hidratante</span>
+            <span
+              class="bg-black/5 border border-black/15 text-black text-xs font-semibold px-3 py-1.5 rounded-full">Protetor
+              FPS 50</span>
+            <span
+              class="bg-black/5 border border-black/15 text-black text-xs font-semibold px-3 py-1.5 rounded-full">Secativo</span>
+          </div>
+
+          <div class="flex items-center flex-wrap gap-x-4 gap-y-2 mt-4">
+            <a href="#avaliacoes" class="flex items-center gap-1.5 w-fit">
+              <span class="flex star" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+                </svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+                </svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+                </svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+                </svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" opacity="0.4" />
+                </svg>
+              </span>
+              <span class="text-sm font-bold tabnum">(4,8)</span>
+              <span class="text-sm text-black/60 underline underline-offset-2 ml-1">31 avaliações</span>
+            </a>
+            <span class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1E7A42]">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" fill="#22A559" />
+                <path d="M8 12.5l2.5 2.5L16 9.5" stroke="white" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              Em Estoque
+            </span>
+          </div>
+
+          <div class="bg-white border border-black/15 rounded-card p-5 mt-5">
+            <div class="flex items-baseline gap-3 flex-wrap">
+              <span class="text-black/50 line-through text-sm tabnum">R$ 226,00</span>
+              <span class="bg-black text-white text-xs font-bold px-2.5 py-1 rounded-full">−39%</span>
+            </div>
+            <p class="font-display text-[40px] font-bold leading-tight mt-1 tabnum">R$ 137,90</p>
+            <p class="text-black font-semibold text-sm mt-1 tabnum">R$ 131,00 no Pix (5% de desconto)</p>
+            <p class="text-black/60 text-sm mt-1 tabnum">ou 4x de R$ 34,48 sem juros</p>
+
+            <div class="flex items-center gap-2 text-sm text-black mt-4 pt-4 border-t border-black/10">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 3h13v10H1z" />
+                <path d="M14 8h4l3 3v2h-7z" />
+                <circle cx="6" cy="17" r="2" />
+                <circle cx="17" cy="17" r="2" />
+              </svg>
+              <span>Frete grátis para todo o Brasil</span>
+            </div>
+
+            <div class="flex items-center gap-3 mt-5">
+              <div class="flex items-center border border-black/15 rounded-btn h-11 shrink-0" role="group"
+                aria-label="Quantidade">
+                <button type="button" id="qtyMinus" aria-label="Diminuir quantidade"
+                  class="w-10 h-full flex items-center justify-center text-lg">−</button>
+                <span id="qtyValue" class="w-8 text-center font-semibold tabnum" aria-live="polite">1</span>
+                <button type="button" id="qtyPlus" aria-label="Aumentar quantidade"
+                  class="w-10 h-full flex items-center justify-center text-lg">+</button>
+              </div>
+              <button type="button"
+                class="flex-1 h-[52px] bg-black text-white font-bold rounded-btn hover:bg-black/85 transition-colors">Comprar
+                agora</button>
+            </div>
+            <p class="text-black/60 text-[13px] mt-3">7 dias para desistir da compra + 90 dias de garantia legal</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 mt-6">
+            <div class="border border-black/10 rounded-card p-4 bg-white">
+              <p class="font-semibold text-sm">Gel de Limpeza</p>
+              <p class="text-black/60 text-xs mt-1">Ácido salicílico 2%, desobstrui poros que viram cravo.</p>
+            </div>
+            <div class="border border-black/10 rounded-card p-4 bg-white">
+              <p class="font-semibold text-sm">Acnexis-02</p>
+              <p class="text-black/60 text-xs mt-1">Contra cravo e espinha, item âncora do kit.</p>
+            </div>
+            <div class="border border-black/10 rounded-card p-4 bg-white">
+              <p class="font-semibold text-sm">Hidratante Oil-Free</p>
+              <p class="text-black/60 text-xs mt-1">Não entope poros, sem brilho.</p>
+            </div>
+            <div class="border border-black/10 rounded-card p-4 bg-white">
+              <p class="font-semibold text-sm">Protetor FPS 50</p>
+              <p class="text-black/60 text-xs mt-1">Toque seco, não entope poro nem deixa resíduo branco.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-black/10 bg-white">
+      <div class="max-w-[1200px] mx-auto px-4 py-8 md:py-10 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="flex flex-col items-center text-center gap-2">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 3h13v10H1z" />
+            <path d="M14 8h4l3 3v2h-7z" />
+            <circle cx="6" cy="17" r="2" />
+            <circle cx="17" cy="17" r="2" />
+          </svg>
+          <p class="text-xs sm:text-sm font-semibold">Frete grátis para todo o Brasil</p>
+        </div>
+        <div class="flex flex-col items-center text-center gap-2">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" />
+          </svg>
+          <p class="text-xs sm:text-sm font-semibold">Compra segura</p>
+        </div>
+        <div class="flex flex-col items-center text-center gap-2">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 3-6.7" />
+            <path d="M3 4v5h5" />
+          </svg>
+          <p class="text-xs sm:text-sm font-semibold">7 dias para desistir</p>
+        </div>
+        <div class="flex flex-col items-center text-center gap-2">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+          </svg>
+          <p class="text-xs sm:text-sm font-semibold">Atendimento por WhatsApp</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-[1200px] mx-auto px-4 py-12 md:py-[72px]">
+      <div class="grid md:grid-cols-[1.4fr_1fr] gap-10 items-start">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold">Por que a pele oleosa vira acne</h2>
+          <div class="text-black/60 text-[15px] sm:text-base leading-relaxed mt-4 space-y-4">
+            <p>Homem produz mais sebo por causa da testosterona. Isso é normal — o problema é quando esse óleo se
+              mistura com célula morta e entope o poro. Poro entupido é cravo. Cravo inflamado é espinha.</p>
+            <p>Lavar o rosto três, quatro vezes por dia não resolve — piora. A pele entende a limpeza agressiva como
+              ataque e produz ainda mais óleo pra se defender.</p>
+            <p>Barbear todo dia soma atrito à pele que já está sensível. Resultado: mais inflamação, marca demorando
+              mais pra sumir.</p>
+            <p>Por isso o kit não aposta em quantidade de produto — aposta em constância. Poucos passos, na ordem certa,
+              todo dia.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-black/15 rounded-card p-6 md:p-8">
+          <p class="font-display text-4xl sm:text-5xl font-extrabold tabnum leading-none">2–3<span
+              class="text-lg font-bold align-top ml-1">semanas</span></p>
+          <p class="text-black/60 text-sm mt-3">Tempo médio para perceber a pele com menos oleosidade e menos cravos,
+            com o uso constante da rotina.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="rotina" class="max-w-[1200px] mx-auto px-4 py-12 md:py-[72px]">
+      <h2 class="text-2xl sm:text-3xl font-bold">Sua rotina anti-acne, passo a passo</h2>
+      <p class="text-black/60 mt-2 max-w-[65ch]">Sem enrolação: é só seguir esses passos todo dia pra tirar cravo e
+        espinha de cena. 2 minutos de manhã, 2 à noite.</p>
+
+      <div class="grid sm:grid-cols-3 gap-5 mt-8">
+        <div class="border border-black/10 rounded-card bg-white p-5">
+          <p class="text-xs font-bold uppercase tracking-wider text-black/50">Semana 1</p>
+          <h3 class="font-bold mt-1">Adaptação</h3>
+          <p class="text-black/60 text-sm mt-2">Use o Acnexis-02 em noites alternadas. Mantenha limpeza e hidratante nos
+            dois períodos para a pele se acostumar aos ativos.</p>
+        </div>
+        <div class="border border-black/10 rounded-card bg-white p-5">
+          <p class="text-xs font-bold uppercase tracking-wider text-black/50">Semana 2</p>
+          <h3 class="font-bold mt-1">Intensificação</h3>
+          <p class="text-black/60 text-sm mt-2">Passe a usar o Acnexis-02 todas as noites. Não pule o protetor solar
+            pela manhã — ele protege a pele enquanto os ativos trabalham.</p>
+        </div>
+        <div class="border-2 border-black rounded-card bg-white p-5">
+          <p class="text-xs font-bold uppercase tracking-wider text-black/50">Semana 3</p>
+          <h3 class="font-bold mt-1">Resultados</h3>
+          <p class="text-black/60 text-sm mt-2">Rotina completa, manhã e noite. É a fase em que cravo e espinha novos
+            costumam parar de aparecer com a mesma frequência.</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="border border-black/10 rounded-card bg-white p-6">
+          <h3 class="font-bold flex items-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.2" y1="4.2" x2="5.6" y2="5.6" />
+              <line x1="18.4" y1="18.4" x2="19.8" y2="19.8" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+            </svg>
+            Manhã
+          </h3>
+          <ol class="mt-4 space-y-4">
+            <li class="flex gap-3"><span class="tabnum font-bold text-black/50 w-5">1</span>
+              <div>
+                <p class="font-semibold text-sm">Limpeza</p>
+                <p class="text-black/60 text-sm">Espuma o Gel de Limpeza com água morna e massageie por 30 segundos.</p>
+              </div>
+            </li>
+            <li class="flex gap-3"><span class="tabnum font-bold text-black/50 w-5">2</span>
+              <div>
+                <p class="font-semibold text-sm">Acnexis-02</p>
+                <p class="text-black/60 text-sm">2 a 3 gotas no rosto seco, espalhando até absorver.</p>
+              </div>
+            </li>
+            <li class="flex gap-3"><span class="tabnum font-bold text-black/50 w-5">3</span>
+              <div>
+                <p class="font-semibold text-sm">Hidratante</p>
+                <p class="text-black/60 text-sm">Camada fina em toda a região do rosto.</p>
+              </div>
+            </li>
+            <li class="flex gap-3"><span class="tabnum font-bold text-black/50 w-5">4</span>
+              <div>
+                <p class="font-semibold text-sm">Protetor</p>
+                <p class="text-black/60 text-sm">Aplique por último, antes de sair de casa.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="border border-black/10 rounded-card bg-white p-6">
+          <h3 class="font-bold flex items-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z" />
+            </svg>
+            Noite
+          </h3>
+          <ol class="mt-4 space-y-4">
+            <li class="flex gap-3"><span class="tabnum font-bold text-black/50 w-5">1</span>
+              <div>
+                <p class="font-semibold text-sm">Limpeza</p>
+                <p class="text-black/60 text-sm">Remova impurezas do dia com o Gel de Limpeza.</p>
+              </div>
+            </li>
+            <li class="flex gap-3"><span class="tabnum font-bold text-black/50 w-5">2</span>
+              <div>
+                <p class="font-semibold text-sm">Acnexis-02</p>
+                <p class="text-black/60 text-sm">Mesma aplicação da manhã, no rosto seco.</p>
+              </div>
+            </li>
+            <li class="flex gap-3"><span class="tabnum font-bold text-black/50 w-5">3</span>
+              <div>
+                <p class="font-semibold text-sm">Hidratante</p>
+                <p class="text-black/60 text-sm">Camada fina para repor a barreira da pele.</p>
+              </div>
+            </li>
+            <li class="flex gap-3"><span class="tabnum font-bold text-black/50 w-5">4</span>
+              <div>
+                <p class="font-semibold text-sm">Secativo (só nos pontos)</p>
+                <p class="text-black/60 text-sm">Aplique só nas espinhas ativas, com a ponta do dedo.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <ul class="mt-8 space-y-3 max-w-[65ch]">
+        <li class="flex gap-3 text-sm text-black/60"><span class="text-black font-bold">•</span>Use protetor solar todos
+          os dias enquanto estiver usando o kit.</li>
+        <li class="flex gap-3 text-sm text-black/60"><span class="text-black font-bold">•</span>Na primeira semana, use
+          o Acnexis-02 em noites alternadas.</li>
+        <li class="flex gap-3 text-sm text-black/60"><span class="text-black font-bold">•</span>Evite aplicar logo após
+          o barbear — espere cerca de 30 minutos.</li>
+        <li class="flex gap-3 text-sm text-black/60"><span class="text-black font-bold">•</span>Não fure ou aperte
+          cravos e espinhas — isso pode piorar a inflamação e deixar marcas.</li>
+      </ul>
+    </section>
+
+    <!-- SEÇÃO DE RESULTADOS -->
+    <section id="resultados" class="max-w-[1200px] mx-auto px-4 py-12 md:py-[72px] border-t border-black/10">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+        <div>
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 border border-black/15 text-xs font-bold text-black mb-3">
+            <span class="w-2 h-2 rounded-full bg-[#22A559] animate-pulse"></span>
+            Evolução comprovada na prática
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">Resultados reais de quem usa o kit</h2>
+          <p class="text-black/60 text-base sm:text-lg max-w-[65ch] mt-2 leading-relaxed">
+            Sem filtros, sem maquiagem e sem promessas milagrosas. Veja a evolução de clientes reais após 3 a 6 semanas
+            seguindo a rotina diária Dermix.
+          </p>
+        </div>
+
+        <!-- Quick stats badge -->
+        <div
+          class="flex items-center gap-3 bg-black/5 border border-black/10 rounded-card p-3 sm:px-5 sm:py-3.5 self-start lg:self-auto shrink-0">
+          <div
+            class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-bold text-sm shrink-0">
+            4.9
+          </div>
+          <div class="text-xs">
+            <p class="font-bold text-black">Eficácia percebida</p>
+            <p class="text-black/60">+94% notaram melhora visível</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Statistics Banner -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-8">
+        <div class="border border-black/10 rounded-card p-4 sm:p-5 bg-white">
+          <p class="font-display text-2xl sm:text-3xl font-extrabold text-black tabnum">94%</p>
+          <p class="text-xs sm:text-sm text-black/60 mt-1 font-medium">menos espinhas ativas e inflamações</p>
+        </div>
+        <div class="border border-black/10 rounded-card p-4 sm:p-5 bg-white">
+          <p class="font-display text-2xl sm:text-3xl font-extrabold text-black tabnum">89%</p>
+          <p class="text-xs sm:text-sm text-black/60 mt-1 font-medium">controle da oleosidade o dia inteiro</p>
+        </div>
+        <div class="border border-black/10 rounded-card p-4 sm:p-5 bg-white">
+          <p class="font-display text-2xl sm:text-3xl font-extrabold text-black tabnum">91%</p>
+          <p class="text-xs sm:text-sm text-black/60 mt-1 font-medium">clareamento de manchas e marcas pós-acne</p>
+        </div>
+        <div class="border border-black/10 rounded-card p-4 sm:p-5 bg-white">
+          <p class="font-display text-2xl sm:text-3xl font-extrabold text-black tabnum">2–3 sem.</p>
+          <p class="text-xs sm:text-sm text-black/60 mt-1 font-medium">tempo médio para notar os primeiros efeitos</p>
+        </div>
+      </div>
+
+      <!-- Filter tabs & Carousel Controls Header -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8">
+        <!-- Filter tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none text-xs sm:text-sm" role="tablist"
+          aria-label="Filtrar resultados por condição">
+          <button type="button"
+            class="result-filter-btn active px-4 py-2 rounded-full font-semibold border transition-colors shrink-0"
+            data-filter="all">
+            Todos os casos (4)
+          </button>
+          <button type="button"
+            class="result-filter-btn px-4 py-2 rounded-full font-semibold border border-black/15 text-black/60 hover:text-black hover:border-black/30 transition-colors shrink-0"
+            data-filter="inflamacao">
+            Acne inflamatória
+          </button>
+          <button type="button"
+            class="result-filter-btn px-4 py-2 rounded-full font-semibold border border-black/15 text-black/60 hover:text-black hover:border-black/30 transition-colors shrink-0"
+            data-filter="cravos">
+            Cravos & mandíbula
+          </button>
+          <button type="button"
+            class="result-filter-btn px-4 py-2 rounded-full font-semibold border border-black/15 text-black/60 hover:text-black hover:border-black/30 transition-colors shrink-0"
+            data-filter="oleosidade">
+            Oleosidade & marcas
+          </button>
+        </div>
+
+        <!-- Carousel Controls (Prev/Next buttons) -->
+        <div class="flex items-center gap-2 shrink-0 self-end sm:self-auto">
+          <button id="resultsPrevBtn" type="button" aria-label="Depoimento anterior"
+            class="w-10 h-10 rounded-full border border-black/20 bg-white text-black flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-sm active:scale-95 disabled:opacity-30 disabled:pointer-events-none cursor-pointer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button id="resultsNextBtn" type="button" aria-label="Próximo depoimento"
+            class="w-10 h-10 rounded-full border border-black/20 bg-white text-black flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-sm active:scale-95 disabled:opacity-30 disabled:pointer-events-none cursor-pointer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Carousel Track Container -->
+      <div class="relative mt-6">
+        <div id="resultsTrack"
+          class="results-carousel flex gap-5 sm:gap-6 overflow-x-auto scroll-smooth scrollbar-none pb-4 pt-1 snap-x snap-mandatory cursor-grab active:cursor-grabbing select-none"
+          style="-webkit-overflow-scrolling: touch;">
+          <!-- Card 1 -->
+          <article
+            class="result-card w-[86vw] max-w-[340px] sm:w-[350px] lg:w-[calc(33.333%-16px)] xl:w-[calc(28%-16px)] shrink-0 snap-start group flex flex-col bg-white border border-black/10 rounded-card overflow-hidden hover:border-black/40 hover:shadow-md transition-all duration-200"
+            data-category="inflamacao" data-index="0">
+            <div class="relative w-full aspect-square overflow-hidden bg-black/5 cursor-pointer result-img-trigger"
+              role="button" tabindex="0" aria-label="Ver detalhes de Lucas F.">
+              <img src="assets/resultado1.png"
+                alt="Antes e Depois de Lucas F. mostrando evolução da acne inflamatória após 4 semanas de uso do kit"
+                class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                loading="lazy">
+              <span
+                class="absolute top-3 left-3 z-10 bg-black/85 backdrop-blur text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                4 semanas de uso
+              </span>
+              <button type="button"
+                class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-black flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                title="Ampliar foto" aria-label="Ampliar foto de Lucas F.">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6" />
+                  <path d="M9 21H3v-6" />
+                  <path d="M21 3l-7 7" />
+                  <path d="M3 21l7-7" />
+                </svg>
+              </button>
+              <div
+                class="absolute bottom-10 inset-x-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <span
+                  class="bg-black/80 backdrop-blur text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow">Toque
+                  para ver detalhes</span>
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2">
+                  <h3 class="font-bold text-sm sm:text-base">Lucas F., 21 anos</h3>
+                  <span
+                    class="inline-flex items-center gap-1 text-[11px] font-semibold text-[#1E7A42] bg-[#22A559]/10 px-2 py-0.5 rounded-full">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="10" fill="#22A559" />
+                      <path d="M8 12.5l2.5 2.5L16 9.5" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                    Verificado
+                  </span>
+                </div>
+                <div class="mt-2">
+                  <span
+                    class="inline-block text-[11px] font-medium text-black/70 bg-black/5 px-2.5 py-0.5 rounded-full">Acne
+                    inflamatória e marcas</span>
+                </div>
+                <p class="text-black/75 text-xs sm:text-sm mt-3 leading-relaxed">
+                  “Minhas bochechas viviam inflamadas e com espinhas doloridas que deixavam marcas roxas. Em 4 semanas
+                  da rotina certinha, a pele limpou completamente.”
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-black/10 flex items-center justify-between text-xs text-black/50">
+                <span>Tempo de uso:</span>
+                <span class="font-bold text-black">4 semanas</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article
+            class="result-card w-[86vw] max-w-[340px] sm:w-[350px] lg:w-[calc(33.333%-16px)] xl:w-[calc(28%-16px)] shrink-0 snap-start group flex flex-col bg-white border border-black/10 rounded-card overflow-hidden hover:border-black/40 hover:shadow-md transition-all duration-200"
+            data-category="cravos" data-index="1">
+            <div class="relative w-full aspect-square overflow-hidden bg-black/5 cursor-pointer result-img-trigger"
+              role="button" tabindex="0" aria-label="Ver detalhes de Mateus R.">
+              <img src="assets/resultado2.png"
+                alt="Antes e Depois de Mateus R. mostrando evolução de cravos e espinhas na mandíbula após 5 semanas"
+                class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                loading="lazy">
+              <span
+                class="absolute top-3 left-3 z-10 bg-black/85 backdrop-blur text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                5 semanas de uso
+              </span>
+              <button type="button"
+                class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-black flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                title="Ampliar foto" aria-label="Ampliar foto de Mateus R.">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6" />
+                  <path d="M9 21H3v-6" />
+                  <path d="M21 3l-7 7" />
+                  <path d="M3 21l7-7" />
+                </svg>
+              </button>
+              <div
+                class="absolute bottom-10 inset-x-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <span
+                  class="bg-black/80 backdrop-blur text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow">Toque
+                  para ver detalhes</span>
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2">
+                  <h3 class="font-bold text-sm sm:text-base">Mateus R., 24 anos</h3>
+                  <span
+                    class="inline-flex items-center gap-1 text-[11px] font-semibold text-[#1E7A42] bg-[#22A559]/10 px-2 py-0.5 rounded-full">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="10" fill="#22A559" />
+                      <path d="M8 12.5l2.5 2.5L16 9.5" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                    Verificado
+                  </span>
+                </div>
+                <div class="mt-2">
+                  <span
+                    class="inline-block text-[11px] font-medium text-black/70 bg-black/5 px-2.5 py-0.5 rounded-full">Cravos
+                    & mandíbula</span>
+                </div>
+                <p class="text-black/75 text-xs sm:text-sm mt-3 leading-relaxed">
+                  “Tinha muita espinha misturada com foliculite perto da barba. O gel de limpeza com o Acnexis limpou
+                  tudo sem ressecar e sem arder no barbear.”
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-black/10 flex items-center justify-between text-xs text-black/50">
+                <span>Tempo de uso:</span>
+                <span class="font-bold text-black">5 semanas</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article
+            class="result-card w-[86vw] max-w-[340px] sm:w-[350px] lg:w-[calc(33.333%-16px)] xl:w-[calc(28%-16px)] shrink-0 snap-start group flex flex-col bg-white border border-black/10 rounded-card overflow-hidden hover:border-black/40 hover:shadow-md transition-all duration-200"
+            data-category="inflamacao" data-index="2">
+            <div class="relative w-full aspect-square overflow-hidden bg-black/5 cursor-pointer result-img-trigger"
+              role="button" tabindex="0" aria-label="Ver detalhes de Gabriel T.">
+              <img src="assets/resultado3.png"
+                alt="Antes e Depois de Gabriel T. mostrando alívio de acne ativa e vermelhidão após 3 semanas"
+                class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                loading="lazy">
+              <span
+                class="absolute top-3 left-3 z-10 bg-black/85 backdrop-blur text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                3 semanas de uso
+              </span>
+              <button type="button"
+                class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-black flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                title="Ampliar foto" aria-label="Ampliar foto de Gabriel T.">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6" />
+                  <path d="M9 21H3v-6" />
+                  <path d="M21 3l-7 7" />
+                  <path d="M3 21l7-7" />
+                </svg>
+              </button>
+              <div
+                class="absolute bottom-10 inset-x-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <span
+                  class="bg-black/80 backdrop-blur text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow">Toque
+                  para ver detalhes</span>
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2">
+                  <h3 class="font-bold text-sm sm:text-base">Gabriel T., 23 anos</h3>
+                  <span
+                    class="inline-flex items-center gap-1 text-[11px] font-semibold text-[#1E7A42] bg-[#22A559]/10 px-2 py-0.5 rounded-full">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="10" fill="#22A559" />
+                      <path d="M8 12.5l2.5 2.5L16 9.5" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                    Verificado
+                  </span>
+                </div>
+                <div class="mt-2">
+                  <span
+                    class="inline-block text-[11px] font-medium text-black/70 bg-black/5 px-2.5 py-0.5 rounded-full">Espinhas
+                    ativas & vermelhidão</span>
+                </div>
+                <p class="text-black/75 text-xs sm:text-sm mt-3 leading-relaxed">
+                  “Na segunda semana as espinhas já pararam de brotar e a vermelhidão que incomodava sumiu. Hoje saio
+                  sem me preocupar com o espelho.”
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-black/10 flex items-center justify-between text-xs text-black/50">
+                <span>Tempo de uso:</span>
+                <span class="font-bold text-black">3 semanas</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article
+            class="result-card w-[86vw] max-w-[340px] sm:w-[350px] lg:w-[calc(33.333%-16px)] xl:w-[calc(28%-16px)] shrink-0 snap-start group flex flex-col bg-white border border-black/10 rounded-card overflow-hidden hover:border-black/40 hover:shadow-md transition-all duration-200"
+            data-category="oleosidade" data-index="3">
+            <div class="relative w-full aspect-square overflow-hidden bg-black/5 cursor-pointer result-img-trigger"
+              role="button" tabindex="0" aria-label="Ver detalhes de Guilherme K.">
+              <img src="assets/resultado4.png"
+                alt="Antes e Depois de Guilherme K. mostrando controle de oleosidade e acne após 6 semanas"
+                class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                loading="lazy">
+              <span
+                class="absolute top-3 left-3 z-10 bg-black/85 backdrop-blur text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                6 semanas de uso
+              </span>
+              <button type="button"
+                class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-black flex items-center justify-center shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                title="Ampliar foto" aria-label="Ampliar foto de Guilherme K.">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h6v6" />
+                  <path d="M9 21H3v-6" />
+                  <path d="M21 3l-7 7" />
+                  <path d="M3 21l7-7" />
+                </svg>
+              </button>
+              <div
+                class="absolute bottom-10 inset-x-0 flex justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <span
+                  class="bg-black/80 backdrop-blur text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow">Toque
+                  para ver detalhes</span>
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2">
+                  <h3 class="font-bold text-sm sm:text-base">Guilherme K., 26 anos</h3>
+                  <span
+                    class="inline-flex items-center gap-1 text-[11px] font-semibold text-[#1E7A42] bg-[#22A559]/10 px-2 py-0.5 rounded-full">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="10" fill="#22A559" />
+                      <path d="M8 12.5l2.5 2.5L16 9.5" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                    Verificado
+                  </span>
+                </div>
+                <div class="mt-2">
+                  <span
+                    class="inline-block text-[11px] font-medium text-black/70 bg-black/5 px-2.5 py-0.5 rounded-full">Oleosidade
+                    extrema & marcas</span>
+                </div>
+                <p class="text-black/75 text-xs sm:text-sm mt-3 leading-relaxed">
+                  “No trabalho de escritório a pele brilhava às 14h de tanto óleo. Com o protetor toque seco e o
+                  Acnexis, a pele fica sequinha o dia todo e os cravos sumiram.”
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-black/10 flex items-center justify-between text-xs text-black/50">
+                <span>Tempo de uso:</span>
+                <span class="font-bold text-black">6 semanas</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Carousel Footer (Swipe Hint & Indicator Dots) -->
+        <div class="flex items-center justify-between mt-4 px-1">
+          <div class="flex items-center gap-1.5 text-xs text-black/50 sm:hidden">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8L22 12L18 16" />
+              <path d="M6 8L2 12L6 16" />
+            </svg>
+            <span>Deslize para navegar</span>
+          </div>
+          <div id="resultsDots" class="flex items-center justify-center gap-2 mx-auto sm:mx-0 sm:ml-auto">
+            <!-- Rendered dynamically via JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom CTA Box in Results -->
+      <div
+        class="mt-12 bg-black text-white rounded-card p-6 sm:p-8 md:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div class="max-w-[65ch]">
+          <div
+            class="inline-flex items-center gap-2 bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            Garantia de 7 dias + Frete Grátis
+          </div>
+          <h3 class="font-display text-2xl sm:text-3xl font-bold">Pronto para conquistar esses mesmos resultados?</h3>
+          <p class="text-white/75 text-sm sm:text-base mt-2">
+            Adquira agora o Kit Rotina Anti-Acne Dermix com os 5 produtos essenciais por apenas 4x de R$ 34,48 sem juros
+            e frete grátis para todo o Brasil.
+          </p>
+        </div>
+        <div class="shrink-0">
+          <a href="#kit"
+            class="h-12 px-7 bg-white text-black font-bold rounded-btn flex items-center justify-center hover:bg-white/90 transition-colors whitespace-nowrap">
+            Garantir meu kit com 39% OFF
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="itens" class="bg-black/5 border-y border-black/10">
+      <div class="max-w-[1200px] mx-auto px-4 py-12 md:py-[72px]">
+        <h2 class="text-2xl sm:text-3xl font-bold">Os 5 itens do kit</h2>
+        <p class="text-black/60 mt-2">Cada peça tem um papel na rotina — nenhuma é vendida separadamente nesta oferta.
+        </p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
+          <article class="border border-black/10 rounded-card bg-white overflow-hidden">
+            <img src="assets/produto1.png" alt="Frasco do Gel de Limpeza DERMIX com Ácido Salicílico 2%, 150ml"
+              class="w-full aspect-[4/3] object-contain bg-white p-4">
+            <div class="p-5">
+              <span
+                class="inline-block bg-black/5 border border-black/15 text-black text-[11px] font-semibold px-2.5 py-1 rounded-full mb-2">manhã
+                e noite</span>
+              <h3 class="font-bold">Gel de Limpeza com Ácido Salicílico 2% — 150ml</h3>
+              <p class="text-black/60 text-sm mt-1.5">Limpa sem ressecar e esvazia o poro antes que ele vire cravo.
+                Primeiro passo da rotina, manhã e noite.</p>
+            </div>
+          </article>
+          <article class="border border-black/10 rounded-card bg-white overflow-hidden">
+            <img src="assets/produto2.png" alt="Frasco do Acnexis-02 DERMIX, gel-sérum concentrado de 30ml"
+              class="w-full aspect-[4/3] object-contain bg-white p-4">
+            <div class="p-5">
+              <span
+                class="inline-block bg-black/5 border border-black/15 text-black text-[11px] font-semibold px-2.5 py-1 rounded-full mb-2">manhã
+                e noite</span>
+              <h3 class="font-bold">Acnexis-02 — Gel-Sérum Concentrado — 30ml</h3>
+              <p class="text-black/60 text-sm mt-1.5">Feito pra quem já cansou de cravo e espinha. É o item âncora do
+                kit — fórmula completa na seção abaixo.</p>
+            </div>
+          </article>
+          <article class="border border-black/10 rounded-card bg-white overflow-hidden">
+            <img src="assets/produto3.png" alt="Pote do Hidratante Facial Oil-Free DERMIX, 50g"
+              class="w-full aspect-[4/3] object-contain bg-white p-4">
+            <div class="p-5">
+              <span
+                class="inline-block bg-black/5 border border-black/15 text-black text-[11px] font-semibold px-2.5 py-1 rounded-full mb-2">manhã
+                e noite</span>
+              <h3 class="font-bold">Hidratante Facial Oil-Free — 50g</h3>
+              <p class="text-black/60 text-sm mt-1.5">Repõe a barreira da pele sem alimentar o excesso de oleosidade que
+                vira cravo. Textura leve, absorve rápido.</p>
+            </div>
+          </article>
+          <article class="border border-black/10 rounded-card bg-white overflow-hidden">
+            <img src="assets/produto4.png" alt="Bisnaga do Protetor Solar Facial FPS 50 DERMIX toque seco, 50g"
+              class="w-full aspect-[4/3] object-contain bg-white p-4">
+            <div class="p-5">
+              <span
+                class="inline-block bg-black/5 border border-black/15 text-black text-[11px] font-semibold px-2.5 py-1 rounded-full mb-2">manhã</span>
+              <h3 class="font-bold">Protetor Solar Facial FPS 50 Toque Seco — 50g</h3>
+              <p class="text-black/60 text-sm mt-1.5">Protege sem entupir poro — não anula o trabalho do resto da rotina
+                contra a acne. Último passo da manhã.</p>
+            </div>
+          </article>
+          <article class="border border-black/10 rounded-card bg-white overflow-hidden">
+            <img src="assets/produto5.png" alt="Frasco do Gel Secativo Pontual DERMIX, 15ml"
+              class="w-full aspect-[4/3] object-contain bg-white p-4">
+            <div class="p-5">
+              <span
+                class="inline-block bg-black/5 border border-black/15 text-black text-[11px] font-semibold px-2.5 py-1 rounded-full mb-2">quando
+                precisar</span>
+              <h3 class="font-bold">Gel Secativo Pontual — 15ml</h3>
+              <p class="text-black/60 text-sm mt-1.5">Aplicação localizada direto nas espinhas, à noite, só onde
+                precisa.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-[1200px] mx-auto px-4 py-12 md:py-[72px] grid lg:grid-cols-[1.3fr_1fr] gap-10">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold">Por dentro do Acnexis-02</h2>
+        <div class="text-black/70 text-[15px] sm:text-base leading-relaxed mt-4 space-y-4 max-w-[65ch]">
+          <p>O azeloil diglicinato de potássio ajuda a uniformizar o tom da pele e reduzir a aparência de marcas
+            deixadas por espinhas antigas.</p>
+          <p>A niacinamida controla a oleosidade, um dos principais fatores por trás dos cravos e espinhas, e contribui
+            para um acabamento mais matte ao longo do dia.</p>
+          <p>A gluconolactona renova a pele suavemente, ajudando a manter os poros desobstruídos, sem o efeito abrasivo
+            de esfoliantes físicos.</p>
+          <p>Já a ectoína e a beta-glucana trazem conforto para a pele sensibilizada pela acne, reduzindo a irritação
+            comum em rotinas com múltiplos ativos. O resultado é um gel aquoso, de absorção rápida, sem resíduo — pode
+            ser usado após o barbear, respeitando o intervalo indicado na rotina.</p>
+        </div>
+      </div>
+      <div class="bg-black/5 border border-black/15 rounded-card p-6">
+        <p class="text-xs font-bold uppercase tracking-wider text-black/60 mb-3">Lista de ativos</p>
+        <div class="mono text-sm divide-y divide-black/10">
+          <div class="flex justify-between py-2.5"><span>Azeloil diglicinato de potássio</span><span
+              class="tabnum">5,0%</span></div>
+          <div class="flex justify-between py-2.5"><span>Niacinamida</span><span class="tabnum">4,0%</span></div>
+          <div class="flex justify-between py-2.5"><span>Gluconolactona</span><span class="tabnum">3,0%</span></div>
+          <div class="flex justify-between py-2.5"><span>Ectoína</span><span class="tabnum">1,0%</span></div>
+          <div class="flex justify-between py-2.5"><span>Beta-glucana</span><span class="tabnum">1,0%</span></div>
+          <div class="flex justify-between py-2.5 text-black/60"><span>Aqua, veículo e conservantes</span><span
+              class="tabnum">QSP</span></div>
+
+    </section>
+
+    <section class="max-w-[1200px] mx-auto px-4 py-12 md:py-[72px]">
+      <h2 class="text-2xl sm:text-3xl font-bold">Kit x avulso</h2>
+      <p class="text-black/60 mt-2">Os mesmos 5 itens, comprados separadamente, custam mais.</p>
+
+      <div class="mt-8 border border-black/10 rounded-card bg-white overflow-hidden">
+        <div class="divide-y divide-black/10">
+          <div class="flex justify-between items-center px-5 py-4 text-sm sm:text-base">
+            <span>Gel de Limpeza com Ácido Salicílico 2% — 150ml</span>
+            <span class="tabnum text-black/60">R$ 36,90</span>
+          </div>
+          <div class="flex justify-between items-center px-5 py-4 text-sm sm:text-base">
+            <span>Acnexis-02 — Gel-Sérum Concentrado — 30ml</span>
+            <span class="tabnum text-black/60">R$ 87,90</span>
+          </div>
+          <div class="flex justify-between items-center px-5 py-4 text-sm sm:text-base">
+            <span>Hidratante Facial Oil-Free — 50g</span>
+            <span class="tabnum text-black/60">R$ 41,90</span>
+          </div>
+          <div class="flex justify-between items-center px-5 py-4 text-sm sm:text-base">
+            <span>Protetor Solar Facial FPS 50 Toque Seco — 50g</span>
+            <span class="tabnum text-black/60">R$ 36,90</span>
+          </div>
+          <div class="flex justify-between items-center px-5 py-4 text-sm sm:text-base">
+            <span>Gel Secativo Pontual — 15ml</span>
+            <span class="tabnum text-black/60">R$ 22,40</span>
+          </div>
+        </div>
+        <div
+          class="bg-black/5 px-5 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 border-t border-black/10">
+          <div>
+            <p class="text-sm text-black/60">Somado avulso</p>
+            <p class="tabnum line-through text-black/50">R$ 226,00</p>
+          </div>
+          <div class="sm:text-right">
+            <p class="text-sm font-semibold">No kit</p>
+            <p class="font-display tabnum text-2xl font-bold">R$ 137,90</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-black/10 bg-black/5">
+      <div class="max-w-[1200px] mx-auto px-4 py-10 md:py-12">
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-6 text-center">
+          <div>
+            <p class="font-display text-2xl sm:text-3xl font-extrabold tabnum">5</p>
+            <p class="text-black/60 text-xs sm:text-sm mt-1">itens</p>
+          </div>
+          <div>
+            <p class="font-display text-2xl sm:text-3xl font-extrabold tabnum">150ml</p>
+            <p class="text-black/60 text-xs sm:text-sm mt-1">limpeza</p>
+          </div>
+          <div>
+            <p class="font-display text-2xl sm:text-3xl font-extrabold tabnum">30ml</p>
+            <p class="text-black/60 text-xs sm:text-sm mt-1">gel-sérum</p>
+          </div>
+          <div>
+            <p class="font-display text-2xl sm:text-3xl font-extrabold tabnum">FPS 50</p>
+            <p class="text-black/60 text-xs sm:text-sm mt-1">protetor</p>
+          </div>
+          <div>
+            <p class="font-display text-2xl sm:text-3xl font-extrabold tabnum">pH 4,8</p>
+            <p class="text-black/60 text-xs sm:text-sm mt-1">gel-sérum</p>
+          </div>
+          <div>
+            <p class="font-display text-2xl sm:text-3xl font-extrabold tabnum">60 dias</p>
+            <p class="text-black/60 text-xs sm:text-sm mt-1">duração média</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-[1200px] mx-auto px-4 py-12 md:py-[72px] grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold">O que vem na caixa</h2>
+        <ul class="mt-6 space-y-3">
+          <li class="flex items-start gap-3"><svg class="shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6L9 17l-5-5" />
+            </svg><span class="text-sm">Gel de Limpeza com Ácido Salicílico 2% — 150ml</span></li>
+          <li class="flex items-start gap-3"><svg class="shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6L9 17l-5-5" />
+            </svg><span class="text-sm">Acnexis-02 — Gel-Sérum Concentrado — 30ml</span></li>
+          <li class="flex items-start gap-3"><svg class="shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6L9 17l-5-5" />
+            </svg><span class="text-sm">Hidratante Facial Oil-Free — 50g</span></li>
+          <li class="flex items-start gap-3"><svg class="shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6L9 17l-5-5" />
+            </svg><span class="text-sm">Protetor Solar Facial FPS 50 Toque Seco — 50g</span></li>
+          <li class="flex items-start gap-3"><svg class="shrink-0 mt-0.5" width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6L9 17l-5-5" />
+            </svg><span class="text-sm">Gel Secativo Pontual — 15ml</span></li>
+        </ul>
+        <p class="text-black/60 text-sm mt-4">Cartão de rotina impresso incluso</p>
+        <p class="text-black/60 text-sm">Kit fechado — itens não vendidos separadamente nesta oferta</p>
+      </div>
+      <img src="assets/capa-produto-02.png"
+        alt="Os cinco itens do Kit Rotina Anti-Acne Dermix com detalhe em close de cada frasco"
+        class="w-full aspect-[5/4] object-contain rounded-card border border-black/10 bg-white">
+    </section>
+
+    <section id="avaliacoes" class="max-w-[1200px] mx-auto px-4 py-12 md:py-[72px]">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold">Avaliações</h2>
+          <div class="flex items-center gap-2 mt-2">
+            <span class="flex star" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+              </svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+              </svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+              </svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+              </svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" opacity="0.4" />
+              </svg>
+            </span>
+            <span class="font-display text-3xl font-extrabold tabnum">4,8</span>
+            <span class="text-black/60 text-sm">31 avaliações</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 mt-8">
+        <div class="border border-black/10 rounded-card bg-white p-5">
+          <div class="flex star" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+            </svg>
+          </div>
+          <p class="text-sm mt-3">Uso todos os dias antes do trabalho. Desde que comecei a rotina, sinto a pele bem
+            menos oleosa e com menos cravos aparecendo. O protetor nem parece que tem alguma coisa no rosto.</p>
+          <p class="text-black/60 text-xs mt-4">Rafael M. · compra verificada</p>
+        </div>
+        <div class="border border-black/10 rounded-card bg-white p-5">
+          <div class="flex star" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" opacity="0.4" />
+            </svg>
+          </div>
+          <p class="text-sm mt-3">Gostei bastante do kit fechado, principalmente pra quem tem cravos e não sabia por
+            onde começar. Só acho o frasco do secativo pequeno demais — acaba rápido se você usa toda noite.</p>
+          <p class="text-black/60 text-xs mt-4">Thiago A. · compra verificada</p>
+        </div>
+        <div class="border border-black/10 rounded-card bg-white p-5">
+          <div class="flex star" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+            </svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l2.9 6.5 7.1.7-5.4 4.7 1.6 7-6.2-3.8L6 21l1.6-7L2.2 9.2l7.1-.7z" />
+            </svg>
+          </div>
+          <p class="text-sm mt-3">Comprei pelo Acnexis-02 mesmo, mas o kit inteiro faz sentido junto. Depois de umas
+            semanas usando certinho, a pele ficou bem mais controlada, sem tanto brilho nem espinha nova aparecendo.</p>
+          <p class="text-black/60 text-xs mt-4">Bruno S. · compra verificada</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="duvidas" class="max-w-[1200px] mx-auto px-4 py-12 md:py-[72px]">
+      <h2 class="text-2xl sm:text-3xl font-bold">Perguntas frequentes</h2>
+
+      <div class="mt-8 divide-y divide-black/10 border-t border-b border-black/10" id="faqList">
+
+        <div class="faq-item py-2" data-open="true">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 py-4 text-left"
+            aria-expanded="true">
+            <span class="font-semibold">Em quanto tempo eu vejo diferença?</span>
+            <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div>
+              <p class="text-black/60 text-sm pb-4 max-w-[65ch]">Você costuma notar a pele menos oleosa e com menos
+                cravo novo aparecendo entre 2 e 3 semanas de uso contínuo e correto da rotina. Constância diária pesa
+                mais do que quantidade de produto.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item py-2" data-open="false">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 py-4 text-left"
+            aria-expanded="false">
+            <span class="font-semibold">O kit funciona para cravos e espinhas?</span>
+            <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div>
+              <p class="text-black/60 text-sm pb-4 max-w-[65ch]">Sim, esse é o foco da rotina. Ele não substitui
+                avaliação dermatológica — em casos de acne inflamada ou persistente, procure um dermatologista.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item py-2" data-open="false">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 py-4 text-left"
+            aria-expanded="false">
+            <span class="font-semibold">Posso usar logo depois de me barbear?</span>
+            <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div>
+              <p class="text-black/60 text-sm pb-4 max-w-[65ch]">Recomendamos esperar cerca de 30 minutos após o barbear
+                antes de aplicar o Acnexis-02, para reduzir a sensação de ardência em uma pele recém-exposta à lâmina.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item py-2" data-open="false">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 py-4 text-left"
+            aria-expanded="false">
+            <span class="font-semibold">Serve para pele sensível?</span>
+            <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div>
+              <p class="text-black/60 text-sm pb-4 max-w-[65ch]">A formulação foi pensada para uso diário, mas toda pele
+                reage de um jeito. Na primeira semana, use o Acnexis-02 em noites alternadas para observar como sua pele
+                responde antes de aumentar a frequência.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item py-2" data-open="false">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 py-4 text-left"
+            aria-expanded="false">
+            <span class="font-semibold">Quanto tempo dura o kit?</span>
+            <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div>
+              <p class="text-black/60 text-sm pb-4 max-w-[65ch]">Com uso diário nos dois períodos indicados, o kit dura
+                em média 60 dias. O protetor solar e o gel de limpeza costumam acabar primeiro que os demais.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item py-2" data-open="false">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 py-4 text-left"
+            aria-expanded="false">
+            <span class="font-semibold">Como funciona a garantia e a devolução?</span>
+            <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div>
+              <p class="text-black/60 text-sm pb-4 max-w-[65ch]">Você tem 7 dias corridos após o recebimento para
+                desistir da compra, conforme o art. 49 do Código de Defesa do Consumidor, além de 90 dias de garantia
+                legal contra defeito de fabricação.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item py-2" data-open="false">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 py-4 text-left"
+            aria-expanded="false">
+            <span class="font-semibold">Dá para comprar só o Acnexis-02?</span>
+            <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-panel">
+            <div>
+              <p class="text-black/60 text-sm pb-4 max-w-[65ch]">Nesta oferta o Acnexis-02 é vendido apenas dentro do
+                kit fechado, junto aos outros 4 itens da rotina.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="bg-black py-3 overflow-hidden" aria-hidden="true">
+      <div class="flex whitespace-nowrap marquee-track w-max">
+        <span class="text-white font-bold text-sm mx-4">R$ 137,90 no kit · Frete grátis · 5 itens · 4x sem juros
+          ·</span>
+        <span class="text-white font-bold text-sm mx-4">R$ 137,90 no kit · Frete grátis · 5 itens · 4x sem juros
+          ·</span>
+        <span class="text-white font-bold text-sm mx-4">R$ 137,90 no kit · Frete grátis · 5 itens · 4x sem juros
+          ·</span>
+        <span class="text-white font-bold text-sm mx-4">R$ 137,90 no kit · Frete grátis · 5 itens · 4x sem juros
+          ·</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- RESULTADOS LIGHTBOX MODAL -->
+  <div id="resultModal"
+    class="result-modal fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
+    role="dialog" aria-modal="true" aria-labelledby="modalUserName">
+    <div
+      class="relative bg-white rounded-card max-w-4xl w-full max-h-[92vh] overflow-y-auto flex flex-col md:flex-row shadow-2xl">
+      <!-- Close button -->
+      <button type="button" id="closeModalBtn"
+        class="absolute top-3 right-3 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-black flex items-center justify-center shadow-md transition-all"
+        aria-label="Fechar visualização">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <!-- Modal image side -->
+      <div
+        class="w-full md:w-1/2 bg-black/5 flex items-center justify-center p-4 sm:p-6 border-b md:border-b-0 md:border-r border-black/10">
+        <img id="modalImg" src="" alt="" class="w-full aspect-square object-contain rounded-[10px] shadow-sm">
+      </div>
+
+      <!-- Modal details side -->
+      <div class="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span id="modalWeeks" class="bg-black text-white text-xs font-bold px-3 py-1 rounded-full"></span>
+            <span
+              class="inline-flex items-center gap-1 text-xs font-semibold text-[#1E7A42] bg-[#22A559]/10 px-2.5 py-1 rounded-full">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" fill="#22A559" />
+                <path d="M8 12.5l2.5 2.5L16 9.5" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              Compra Verificada
+            </span>
+          </div>
+
+          <h3 id="modalUserName" class="font-display text-2xl font-bold mt-3"></h3>
+          <p id="modalCategory" class="text-xs font-semibold text-black/60 mt-1 uppercase tracking-wider"></p>
+
+          <div class="mt-4 p-4 rounded-card bg-black/5 border border-black/10">
+            <p id="modalQuote" class="text-sm text-black/80 leading-relaxed italic"></p>
+          </div>
+
+          <div class="mt-5 space-y-2 text-xs sm:text-sm">
+            <div class="flex items-center justify-between py-1.5 border-b border-black/10">
+              <span class="text-black/60">Produtos utilizados:</span>
+              <span class="font-semibold text-black">Kit Dermix 5 itens</span>
+            </div>
+            <div class="flex items-center justify-between py-1.5 border-b border-black/10">
+              <span class="text-black/60">Frequência da rotina:</span>
+              <span class="font-semibold text-black">Diária (Manhã e Noite)</span>
+            </div>
+            <div class="flex items-center justify-between py-1.5">
+              <span class="text-black/60">Evolução notada em:</span>
+              <span id="modalTimeline" class="font-semibold text-black"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-black/10 flex items-center justify-between gap-3">
+          <!-- Prev / Next buttons -->
+          <div class="flex items-center gap-2">
+            <button type="button" id="prevModalBtn"
+              class="w-10 h-10 rounded-btn border border-black/15 flex items-center justify-center hover:bg-black/5 transition-colors"
+              aria-label="Caso anterior">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button type="button" id="nextModalBtn"
+              class="w-10 h-10 rounded-btn border border-black/15 flex items-center justify-center hover:bg-black/5 transition-colors"
+              aria-label="Próximo caso">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </div>
+
+          <a href="#kit" id="modalBuyBtn"
+            class="flex-1 h-11 bg-black text-white font-bold rounded-btn flex items-center justify-center hover:bg-black/85 transition-colors text-xs sm:text-sm text-center">
+            Quero esses resultados
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-black text-white">
+    <div class="max-w-[1200px] mx-auto px-4 pt-12 md:pt-16 pb-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div>
+        <p class="font-bold text-sm uppercase tracking-wider mb-4">Institucional</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="#kit" class="hover:text-white">Sobre o kit</a></li>
+          <li><a href="#rotina" class="hover:text-white">Como usar</a></li>
+          <li><a href="#resultados" class="hover:text-white">Resultados reais</a></li>
+          <li><a href="#itens" class="hover:text-white">Os 5 itens</a></li>
+          <li><a href="#duvidas" class="hover:text-white">Política de privacidade</a></li>
+          <li><a href="#duvidas" class="hover:text-white">Termos de uso</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-bold text-sm uppercase tracking-wider mb-4">Sua conta</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="#" class="hover:text-white">Meus pedidos</a></li>
+          <li><a href="#duvidas" class="hover:text-white">Trocas e devoluções</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-bold text-sm uppercase tracking-wider mb-4">Atendimento</p>
+        <ul class="space-y-2.5 text-sm text-white/70">
+          <li><a href="#" class="hover:text-white">WhatsApp</a></li>
+          <li><a href="#" class="hover:text-white">contato@dermix.com.br</a></li>
+          <li><a href="#duvidas" class="hover:text-white">Perguntas frequentes</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Linha de pagamento e segurança pegando de ponta a ponta -->
+    <div class="border-t border-white/15 py-8 md:py-10">
+      <div class="max-w-[1200px] mx-auto px-4 flex flex-col items-center">
+        <p class="text-xs uppercase tracking-wider text-white/50 font-bold mb-6 text-center">Formas de pagamento aceitas & ambiente seguro</p>
+        <img src="assets/selo.png" alt="Formas de pagamento aceitas e certificados de segurança" class="w-full max-w-[1100px] h-auto object-contain" loading="lazy">
+      </div>
+    </div>
+    <div class="border-t border-white/15">
+      <div
+        class="max-w-[1200px] mx-auto px-4 py-5 text-xs text-white/60 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+        <span>Dermix Cosméticos LTDA · CNPJ 84.519.622/0001-10 · Curitiba - PR</span>
+        <span>Todos os direitos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+      (function () {
+        var mainImg = document.getElementById('mainProductImage');
+        var toggleKit = document.getElementById('toggleKit');
+        var toggleParts = document.getElementById('toggleParts');
+        var thumbs = document.querySelectorAll('.thumb-btn');
+
+        function setMain(src, alt) {
+          mainImg.src = src;
+          mainImg.alt = alt;
+        }
+
+        function setThumbActive(btn) {
+          thumbs.forEach(function (t) { t.classList.remove('thumb-active'); });
+          if (btn) btn.classList.add('thumb-active');
+        }
+
+        toggleKit.addEventListener('click', function () {
+          setMain('assets/capa-product01.png', 'Kit Rotina Anti-Acne Dermix com os 5 itens e a caixa lado a lado');
+          toggleKit.setAttribute('aria-pressed', 'true');
+          toggleParts.setAttribute('aria-pressed', 'false');
+          toggleKit.classList.add('bg-black', 'text-white');
+          toggleKit.classList.remove('text-black/60');
+          toggleParts.classList.remove('bg-black', 'text-white');
+          toggleParts.classList.add('text-black/60');
+          setThumbActive(thumbs[0]);
+        });
+
+        toggleParts.addEventListener('click', function () {
+          setMain('assets/capa-product-03.png', 'Os 5 itens do Kit Rotina Anti-Acne Dermix dispostos separadamente ao lado da caixa');
+          toggleParts.setAttribute('aria-pressed', 'true');
+          toggleKit.setAttribute('aria-pressed', 'false');
+          toggleParts.classList.add('bg-black', 'text-white');
+          toggleParts.classList.remove('text-black/60');
+          toggleKit.classList.remove('bg-black', 'text-white');
+          toggleKit.classList.add('text-black/60');
+          setThumbActive(thumbs[2]);
+        });
+
+        thumbs.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            setMain(btn.getAttribute('data-src'), btn.getAttribute('data-alt'));
+            setThumbActive(btn);
+          });
+        });
+
+        var qty = 1;
+        var qtyValue = document.getElementById('qtyValue');
+        var cartCount = document.getElementById('cartCount');
+        document.getElementById('qtyMinus').addEventListener('click', function () {
+          qty = Math.max(1, qty - 1);
+          qtyValue.textContent = qty;
+          cartCount.textContent = qty;
+        });
+        document.getElementById('qtyPlus').addEventListener('click', function () {
+          qty = Math.min(10, qty + 1);
+          qtyValue.textContent = qty;
+          cartCount.textContent = qty;
+        });
+
+        document.querySelectorAll('.faq-toggle').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var item = btn.closest('.faq-item');
+            var isOpen = item.getAttribute('data-open') === 'true';
+            document.querySelectorAll('.faq-item').forEach(function (i) {
+              i.setAttribute('data-open', 'false');
+              i.querySelector('.faq-toggle').setAttribute('aria-expanded', 'false');
+            });
+            if (!isOpen) {
+              item.setAttribute('data-open', 'true');
+              btn.setAttribute('aria-expanded', 'true');
+            }
+          });
+        });
+
+        var menuBtn = document.getElementById('menuBtn');
+        var mobileNav = document.getElementById('mobileNav');
+        menuBtn.addEventListener('click', function () {
+          var open = mobileNav.classList.toggle('open');
+          menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        mobileNav.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', function () {
+            mobileNav.classList.remove('open');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+
+        /* Resultados Section: Filtro de Categorias e Modal Lightbox */
+        var resultsData = [
+          {
+            name: "Lucas F., 21 anos",
+            category: "Acne inflamatória e marcas",
+            weeks: "4 semanas de uso",
+            timeline: "14 a 28 dias",
+            quote: "“Minhas bochechas viviam inflamadas e com espinhas doloridas que deixavam marcas roxas. Em 4 semanas da rotina certinha, a pele limpou completamente e a textura ficou uniforme.”",
+            img: "assets/resultado1.png",
+            alt: "Antes e Depois de Lucas F. mostrando evolução da acne inflamatória após 4 semanas de uso do kit"
+          },
+          {
+            name: "Mateus R., 24 anos",
+            category: "Cravos & mandíbula",
+            weeks: "5 semanas de uso",
+            timeline: "21 a 35 dias",
+            quote: "“Tinha muita espinha misturada com foliculite perto da barba e mandíbula. O gel de limpeza com o Acnexis-02 limpou tudo sem ressecar e sem arder no barbear.”",
+            img: "assets/resultado2.png",
+            alt: "Antes e Depois de Mateus R. mostrando evolução de cravos e espinhas na mandíbula após 5 semanas"
+          },
+          {
+            name: "Gabriel T., 23 anos",
+            category: "Espinhas ativas & vermelhidão",
+            weeks: "3 semanas de uso",
+            timeline: "10 a 21 dias",
+            quote: "“Na segunda semana as espinhas já pararam de brotar e a vermelhidão que incomodava tanto sumiu rápido. Hoje saio sem me preocupar com o espelho.”",
+            img: "assets/resultado3.png",
+            alt: "Antes e Depois de Gabriel T. mostrando alívio de acne ativa e vermelhidão após 3 semanas"
+          },
+          {
+            name: "Guilherme K., 26 anos",
+            category: "Oleosidade extrema & marcas",
+            weeks: "6 semanas de uso",
+            timeline: "20 a 42 dias",
+            quote: "“No trabalho de escritório a pele brilhava às 14h de tanto óleo. Com o protetor toque seco e o Acnexis-02, a pele fica sequinha o dia todo e os cravos sumiram.”",
+            img: "assets/resultado4.png",
+            alt: "Antes e Depois de Guilherme K. mostrando controle de oleosidade e acne após 6 semanas"
+          }
+        ];
+
+        var filterBtns = document.querySelectorAll('.result-filter-btn');
+        var resultCards = document.querySelectorAll('.result-card');
+        var resultsTrack = document.getElementById('resultsTrack');
+        var resultsPrevBtn = document.getElementById('resultsPrevBtn');
+        var resultsNextBtn = document.getElementById('resultsNextBtn');
+        var resultsDots = document.getElementById('resultsDots');
+
+        function getStepWidth() {
+          var firstVis = Array.from(resultCards).find(function (c) { return c.style.display !== 'none'; });
+          if (!firstVis || !resultsTrack) return 360;
+          var style = window.getComputedStyle(resultsTrack);
+          var gap = parseFloat(style.columnGap || style.gap) || 24;
+          return firstVis.offsetWidth + gap;
+        }
+
+        function updateCarouselControls() {
+          if (!resultsTrack) return;
+          var visibleCards = Array.from(resultCards).filter(function (c) {
+            return c.style.display !== 'none';
+          });
+
+          if (visibleCards.length <= 1) {
+            if (resultsDots) resultsDots.style.display = 'none';
+            if (resultsPrevBtn) resultsPrevBtn.disabled = true;
+            if (resultsNextBtn) resultsNextBtn.disabled = true;
+            return;
+          }
+          if (resultsDots) resultsDots.style.display = 'flex';
+
+          var scrollL = resultsTrack.scrollLeft;
+          var maxScroll = resultsTrack.scrollWidth - resultsTrack.clientWidth - 8;
+
+          if (resultsPrevBtn) resultsPrevBtn.disabled = scrollL <= 5;
+          if (resultsNextBtn) resultsNextBtn.disabled = scrollL >= maxScroll;
+
+          var activeIdx = 0;
+          var minDiff = Infinity;
+          visibleCards.forEach(function (card, idx) {
+            var diff = Math.abs((card.offsetLeft - resultsTrack.offsetLeft) - scrollL);
+            if (diff < minDiff) {
+              minDiff = diff;
+              activeIdx = idx;
+            }
+          });
+
+          if (resultsDots) {
+            var dots = resultsDots.querySelectorAll('.result-dot');
+            dots.forEach(function (dot, idx) {
+              if (idx === activeIdx) {
+                dot.className = 'result-dot w-6 h-2 rounded-full bg-black';
+                dot.setAttribute('aria-current', 'true');
+              } else {
+                dot.className = 'result-dot w-2 h-2 rounded-full bg-black/25 hover:bg-black/50 cursor-pointer';
+                dot.removeAttribute('aria-current');
+              }
+            });
+          }
+        }
+
+        function renderDots() {
+          if (!resultsDots || !resultsTrack) return;
+          resultsDots.innerHTML = '';
+          var visibleCards = Array.from(resultCards).filter(function (c) {
+            return c.style.display !== 'none';
+          });
+
+          visibleCards.forEach(function (card, idx) {
+            var dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = idx === 0 ? 'result-dot w-6 h-2 rounded-full bg-black' : 'result-dot w-2 h-2 rounded-full bg-black/25 hover:bg-black/50 cursor-pointer';
+            dot.setAttribute('aria-label', 'Ir para o resultado ' + (idx + 1));
+            dot.addEventListener('click', function () {
+              card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+            });
+            resultsDots.appendChild(dot);
+          });
+          updateCarouselControls();
+        }
+
+        if (resultsPrevBtn && resultsTrack) {
+          resultsPrevBtn.addEventListener('click', function () {
+            resultsTrack.scrollBy({ left: -getStepWidth(), behavior: 'smooth' });
+          });
+        }
+
+        if (resultsNextBtn && resultsTrack) {
+          resultsNextBtn.addEventListener('click', function () {
+            resultsTrack.scrollBy({ left: getStepWidth(), behavior: 'smooth' });
+          });
+        }
+
+        var isDragging = false;
+        var startX = 0;
+        var startScrollLeft = 0;
+        var draggedDistance = 0;
+
+        if (resultsTrack) {
+          resultsTrack.addEventListener('scroll', function () {
+            window.requestAnimationFrame(updateCarouselControls);
+          }, { passive: true });
+
+          resultsTrack.addEventListener('mousedown', function (e) {
+            isDragging = true;
+            draggedDistance = 0;
+            startX = e.pageX - resultsTrack.offsetLeft;
+            startScrollLeft = resultsTrack.scrollLeft;
+            resultsTrack.style.scrollBehavior = 'auto';
+          });
+
+          window.addEventListener('mouseup', function () {
+            if (isDragging) {
+              isDragging = false;
+              resultsTrack.style.scrollBehavior = 'smooth';
+              setTimeout(function () { draggedDistance = 0; }, 60);
+            }
+          });
+
+          resultsTrack.addEventListener('mousemove', function (e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            var x = e.pageX - resultsTrack.offsetLeft;
+            var walk = (x - startX);
+            draggedDistance = Math.abs(walk);
+            resultsTrack.scrollLeft = startScrollLeft - walk;
+          });
+
+          window.addEventListener('resize', updateCarouselControls);
+        }
+
+        filterBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            filterBtns.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+
+            var filter = btn.getAttribute('data-filter');
+            resultCards.forEach(function (card) {
+              if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                card.style.display = 'flex';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+            if (resultsTrack) resultsTrack.scrollTo({ left: 0, behavior: 'smooth' });
+            renderDots();
+          });
+        });
+
+        renderDots();
+
+        var resultModal = document.getElementById('resultModal');
+        var closeModalBtn = document.getElementById('closeModalBtn');
+        var prevModalBtn = document.getElementById('prevModalBtn');
+        var nextModalBtn = document.getElementById('nextModalBtn');
+        var modalBuyBtn = document.getElementById('modalBuyBtn');
+        var modalImg = document.getElementById('modalImg');
+        var modalUserName = document.getElementById('modalUserName');
+        var modalCategory = document.getElementById('modalCategory');
+        var modalWeeks = document.getElementById('modalWeeks');
+        var modalQuote = document.getElementById('modalQuote');
+        var modalTimeline = document.getElementById('modalTimeline');
+        var currentResultIndex = 0;
+
+        function showResultModal(idx) {
+          currentResultIndex = (idx + resultsData.length) % resultsData.length;
+          var data = resultsData[currentResultIndex];
+          modalImg.src = data.img;
+          modalImg.alt = data.alt;
+          modalUserName.textContent = data.name;
+          modalCategory.textContent = data.category;
+          modalWeeks.textContent = data.weeks;
+          modalQuote.textContent = data.quote;
+          modalTimeline.textContent = data.timeline;
+          resultModal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function hideResultModal() {
+          resultModal.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.result-img-trigger').forEach(function (el) {
+          el.addEventListener('click', function () {
+            if (draggedDistance > 6) return;
+            var card = el.closest('.result-card');
+            var idx = parseInt(card.getAttribute('data-index'), 10);
+            showResultModal(idx);
+          });
+          el.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              var card = el.closest('.result-card');
+              var idx = parseInt(card.getAttribute('data-index'), 10);
+              showResultModal(idx);
+            }
+          });
+        });
+
+        closeModalBtn.addEventListener('click', hideResultModal);
+        resultModal.addEventListener('click', function (e) {
+          if (e.target === resultModal) {
+            hideResultModal();
+          }
+        });
+
+        prevModalBtn.addEventListener('click', function () {
+          showResultModal(currentResultIndex - 1);
+        });
+
+        nextModalBtn.addEventListener('click', function () {
+          showResultModal(currentResultIndex + 1);
+        });
+
+        modalBuyBtn.addEventListener('click', function () {
+          hideResultModal();
+        });
+
+        window.addEventListener('keydown', function (e) {
+          if (!resultModal.classList.contains('open')) return;
+          if (e.key === 'Escape') {
+            hideResultModal();
+          } else if (e.key === 'ArrowLeft') {
+            showResultModal(currentResultIndex - 1);
+          } else if (e.key === 'ArrowRight') {
+            showResultModal(currentResultIndex + 1);
+          }
+        });
+      })();
+  </script>
+
+</body>
+
+</html>
