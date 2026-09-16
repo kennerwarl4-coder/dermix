@@ -211,10 +211,22 @@
           <input readonly id="pixCode" class="flex-1 h-11 px-3 rounded-btn border border-black/15 bg-black/5 text-xs mono truncate" value="">
           <button type="button" id="copyPixBtn" class="h-11 px-5 rounded-btn bg-black text-white font-bold text-sm shrink-0">Copiar</button>
         </div>
-        <div class="mt-6 flex items-center justify-center gap-2 text-sm text-black/60">
+        <div id="pollingStatus" class="mt-6 flex items-center justify-center gap-2 text-sm text-black/60">
           <span class="w-2 h-2 rounded-full bg-[#22A559] pulse-dot"></span>
           Aguardando confirmação do pagamento
         </div>
+        <p id="pollingTimeout" class="hidden text-sm text-black/60 mt-4">
+          Ainda não identificamos o pagamento. Se você já pagou, aguarde mais alguns instantes — a confirmação pode demorar um pouco.
+        </p>
+      </section>
+
+      <section id="paymentSuccess" class="hidden border border-black/15 rounded-card bg-white p-6 sm:p-10 text-center">
+        <div class="w-14 h-14 rounded-full bg-[#22A559] flex items-center justify-center mx-auto">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2 class="text-xl sm:text-2xl font-bold mt-4">Pagamento confirmado!</h2>
+        <p class="text-black/60 text-sm mt-2">Recebemos seu Pix. O pedido já entrou na fila de envio — você recebe os detalhes por e-mail.</p>
+        <a href="index.html" class="inline-flex h-12 px-6 items-center justify-center rounded-btn bg-black text-white font-bold mt-6">Voltar à loja</a>
       </section>
     </div>
 
@@ -405,6 +417,47 @@
     el.stepsWrap.classList.add('hidden');
     el.qrScreen.classList.remove('hidden');
     el.qrScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    if (data.transactionId) {
+      startPolling(data.transactionId);
+    }
+  }
+
+  var POLL_INTERVAL_MS = 5000;
+  var POLL_TIMEOUT_MS = 10 * 60 * 1000; // 10 minutos
+  var pollTimer = null;
+
+  function startPolling(transactionId) {
+    var startedAt = Date.now();
+
+    pollTimer = setInterval(function () {
+      if (Date.now() - startedAt > POLL_TIMEOUT_MS) {
+        clearInterval(pollTimer);
+        document.getElementById('pollingStatus').classList.add('hidden');
+        document.getElementById('pollingTimeout').classList.remove('hidden');
+        return;
+      }
+
+      fetch('/api/check-pix-status?transactionId=' + encodeURIComponent(transactionId))
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (data.status === 'COMPLETED') {
+            clearInterval(pollTimer);
+            el.qrScreen.classList.add('hidden');
+            document.getElementById('paymentSuccess').classList.remove('hidden');
+            document.getElementById('paymentSuccess').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else if (data.status === 'FAILED') {
+            clearInterval(pollTimer);
+            document.getElementById('pollingStatus').classList.add('hidden');
+            document.getElementById('pollingTimeout').textContent = 'O pagamento falhou ou expirou. Volte e tente novamente.';
+            document.getElementById('pollingTimeout').classList.remove('hidden');
+          }
+          // PENDING: continua o polling normalmente.
+        })
+        .catch(function () {
+          // erro de rede pontual: ignora e tenta de novo no próximo ciclo.
+        });
+    }, POLL_INTERVAL_MS);
   }
 
   document.getElementById('copyPixBtn').addEventListener('click', function () {
