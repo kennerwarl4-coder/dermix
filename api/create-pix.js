@@ -4,6 +4,9 @@
 // Configurar na Vercel: Project Settings > Environment Variables
 //   SIGILOPAY_PUBLIC_KEY = <sua chave publica>
 //   SIGILOPAY_SECRET_KEY = <sua chave secreta>
+//   UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN (ver lib/kv.js)
+
+import { kvSet } from '../lib/kv.js';
 
 const KIT_PRICE = 137.90;
 const PIX_DISCOUNT = 6.90; // 5% de desconto no Pix (137.90 -> 131.00)
@@ -27,6 +30,8 @@ export default async function handler(req, res) {
   }
 
   const identifier = 'dermix-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+  const proto = req.headers['x-forwarded-proto'] || 'https';
+  const callbackUrl = proto + '://' + req.headers.host + '/api/pix-webhook';
 
   try {
     const sigiloRes = await fetch('https://app.sigilopay.com.br/api/v1/gateway/pix/receive', {
@@ -55,6 +60,7 @@ export default async function handler(req, res) {
           },
         ],
         metadata: { origem: 'checkout-site' },
+        callbackUrl: callbackUrl,
       }),
     });
 
@@ -65,6 +71,13 @@ export default async function handler(req, res) {
         error: data.errorDescription || data.message || 'Falha ao criar cobranca Pix.',
       });
     }
+
+    // Guarda o registro inicial (o webhook vai atualizar o status quando o Pix for pago).
+    await kvSet(
+      'pix:' + data.transactionId,
+      { status: data.transactionStatus || 'PENDING', webhookToken: data.webhookToken || null },
+      60 * 60 * 24
+    );
 
     return res.status(200).json({
       transactionId: data.transactionId,

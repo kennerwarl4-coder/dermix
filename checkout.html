@@ -34,6 +34,8 @@
   .step-badge { transition: background-color 0.2s ease, color 0.2s ease; }
   @keyframes softpulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
   .pulse-dot { animation: softpulse 1.6s ease-in-out infinite; }
+  .qr-focus #checkoutGrid { display: block; max-width: 480px; margin-left: auto; margin-right: auto; }
+  #qrCodeContainer img, #qrCodeContainer canvas { display: block; margin: 0 auto; }
 </style>
 </head>
 <body class="bg-[#FAFAFA] text-black font-body">
@@ -51,7 +53,7 @@
 </header>
 
 <main class="max-w-[1100px] mx-auto px-4 py-8 md:py-12">
-  <div class="grid lg:grid-cols-[1fr_380px] gap-6 lg:gap-8 items-start">
+  <div id="checkoutGrid" class="grid lg:grid-cols-[1fr_380px] gap-6 lg:gap-8 items-start">
 
     <div class="order-2 lg:order-1">
       <a href="index.html" class="inline-flex items-center gap-1.5 text-sm text-black/60 hover:text-black mb-4">
@@ -202,11 +204,14 @@
       </div>
 
       <section id="qrScreen" class="hidden border border-black/15 rounded-card bg-white p-6 sm:p-10 text-center">
-        <h2 class="text-xl sm:text-2xl font-bold">Escaneie para pagar</h2>
-        <p class="text-black/60 text-sm mt-2 max-w-sm mx-auto">Abra o app do seu banco e escaneie o QR code, ou use o Pix Copia e Cola.</p>
+        <p class="text-xs font-bold uppercase tracking-wider text-black/50">Kit Rotina Anti-Acne Dermix + Acnexis-02</p>
+        <p class="font-display text-4xl font-bold tabnum mt-1">R$ 131,00</p>
+        <h2 class="text-lg sm:text-xl font-bold mt-4">Escaneie para pagar</h2>
+        <p class="text-black/60 text-sm mt-1 max-w-sm mx-auto">Abra o app do seu banco e escaneie o QR code, ou use o Pix Copia e Cola.</p>
         <div class="mt-6 flex justify-center">
-          <img id="qrImage" alt="QR Code Pix" class="w-[220px] h-[220px] border border-black/10 rounded-card object-contain hidden">
+          <div id="qrCodeContainer" class="w-[220px] h-[220px] p-2 border border-black/10 rounded-card bg-white flex items-center justify-center"></div>
         </div>
+        <p id="pixExpiry" class="text-xs text-black/50 mt-3"></p>
         <div class="mt-6 flex flex-col sm:flex-row items-stretch gap-2 max-w-md mx-auto">
           <input readonly id="pixCode" class="flex-1 h-11 px-3 rounded-btn border border-black/15 bg-black/5 text-xs mono truncate" value="">
           <button type="button" id="copyPixBtn" class="h-11 px-5 rounded-btn bg-black text-white font-bold text-sm shrink-0">Copiar</button>
@@ -230,7 +235,7 @@
       </section>
     </div>
 
-    <aside class="order-1 lg:order-2 lg:sticky lg:top-24">
+    <aside id="orderSummaryAside" class="order-1 lg:order-2 lg:sticky lg:top-24">
       <div class="border border-black/15 rounded-card bg-white p-5">
         <p class="text-xs font-bold uppercase tracking-wider text-black/50 mb-4">Resumo do pedido</p>
         <div class="flex items-center gap-3">
@@ -266,6 +271,7 @@
   </div>
 </main>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 (function () {
   var state = { step: 1 };
@@ -402,17 +408,27 @@
   });
 
   function showQrScreen(data) {
-    var qrImage = document.getElementById('qrImage');
     var pixCodeInput = document.getElementById('pixCode');
-
-    if (data.pixImage) {
-      qrImage.src = data.pixImage;
-      qrImage.classList.remove('hidden');
-    } else if (data.pixBase64) {
-      qrImage.src = 'data:image/png;base64,' + data.pixBase64;
-      qrImage.classList.remove('hidden');
-    }
     pixCodeInput.value = data.pixCode || '';
+
+    var qrContainer = document.getElementById('qrCodeContainer');
+    qrContainer.innerHTML = '';
+    if (data.pixCode && window.QRCode) {
+      new QRCode(qrContainer, {
+        text: data.pixCode,
+        width: 200,
+        height: 200,
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    }
+
+    if (data.expiresAt) {
+      startExpiryCountdown(data.expiresAt);
+    }
+
+    // Some as distrações na hora de pagar: some o resumo do pedido e o topo dos passos.
+    document.getElementById('orderSummaryAside').classList.add('hidden');
+    document.body.classList.add('qr-focus');
 
     el.stepsWrap.classList.add('hidden');
     el.qrScreen.classList.remove('hidden');
@@ -423,7 +439,28 @@
     }
   }
 
-  var POLL_INTERVAL_MS = 5000;
+  var expiryTimer = null;
+  function startExpiryCountdown(expiresAt) {
+    var expiryEl = document.getElementById('pixExpiry');
+    var expiresAtMs = new Date(expiresAt).getTime();
+
+    function tick() {
+      var remaining = expiresAtMs - Date.now();
+      if (remaining <= 0) {
+        clearInterval(expiryTimer);
+        expiryEl.textContent = 'Este QR code expirou.';
+        return;
+      }
+      var min = Math.floor(remaining / 60000);
+      var sec = Math.floor((remaining % 60000) / 1000);
+      expiryEl.textContent = 'Expira em ' + min + ':' + (sec < 10 ? '0' : '') + sec;
+    }
+
+    tick();
+    expiryTimer = setInterval(tick, 1000);
+  }
+
+  var POLL_INTERVAL_MS = 3000;
   var POLL_TIMEOUT_MS = 10 * 60 * 1000; // 10 minutos
   var pollTimer = null;
 
@@ -443,6 +480,7 @@
         .then(function (data) {
           if (data.status === 'COMPLETED') {
             clearInterval(pollTimer);
+            clearInterval(expiryTimer);
             el.qrScreen.classList.add('hidden');
             document.getElementById('paymentSuccess').classList.remove('hidden');
             document.getElementById('paymentSuccess').scrollIntoView({ behavior: 'smooth', block: 'start' });
