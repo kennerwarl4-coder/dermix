@@ -254,14 +254,17 @@
 
         <div>
           <div class="relative bg-white border border-black/10 rounded-card p-3 sm:p-5">
-            <span class="absolute top-3 left-3 z-10 bg-black text-white text-xs font-bold px-3 py-1.5 rounded-full">−39%
+            <span
+              class="absolute top-2 left-2 sm:top-3 sm:left-3 z-10 bg-black text-white text-[10px] sm:text-xs font-bold px-2 py-1 sm:px-3 sm:py-1.5 rounded-full">−39%
               no kit</span>
             <div
-              class="absolute top-3 right-3 z-10 flex bg-white border border-black/15 rounded-full p-1 text-xs font-semibold">
+              class="absolute top-2 right-2 sm:top-3 sm:right-3 z-10 flex bg-white border border-black/15 rounded-full p-0.5 sm:p-1 text-[9px] sm:text-xs font-semibold">
               <button type="button" id="toggleKit" aria-pressed="true"
-                class="view-toggle px-3 py-1.5 rounded-full bg-black text-white transition-colors">Kit montado</button>
+                class="view-toggle px-1.5 py-0.5 sm:px-3 sm:py-1.5 rounded-full bg-black text-white transition-colors whitespace-nowrap">Kit
+                montado</button>
               <button type="button" id="toggleParts" aria-pressed="false"
-                class="view-toggle px-3 py-1.5 rounded-full text-black/60 transition-colors">Peças separadas</button>
+                class="view-toggle px-1.5 py-0.5 sm:px-3 sm:py-1.5 rounded-full text-black/60 transition-colors whitespace-nowrap">Peças
+                separadas</button>
             </div>
             <img id="mainProductImage" src="assets/capa-product01.png"
               alt="Kit Rotina Anti-Acne Dermix com os 5 itens e a caixa lado a lado"
@@ -372,9 +375,9 @@
                 <button type="button" id="qtyPlus" aria-label="Aumentar quantidade"
                   class="w-10 h-full flex items-center justify-center text-lg">+</button>
               </div>
-              <button type="button"
-                class="flex-1 h-[52px] bg-black text-white font-bold rounded-btn hover:bg-black/85 transition-colors">Comprar
-                agora</button>
+              <a href="checkout.html"
+                class="flex-1 h-[52px] bg-black text-white font-bold rounded-btn hover:bg-black/85 transition-colors flex items-center justify-center">Comprar
+                agora</a>
             </div>
             <p class="text-black/60 text-[13px] mt-3">7 dias para desistir da compra + 90 dias de garantia legal</p>
           </div>
@@ -637,7 +640,7 @@
           <button type="button"
             class="result-filter-btn active px-4 py-2 rounded-full font-semibold border transition-colors shrink-0"
             data-filter="all">
-            Todos os casos (4)
+            Alguns casos (4)
           </button>
           <button type="button"
             class="result-filter-btn px-4 py-2 rounded-full font-semibold border border-black/15 text-black/60 hover:text-black hover:border-black/30 transition-colors shrink-0"

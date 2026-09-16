@@ -1,0 +1,6 @@
+{
+  "name": "dermix-checkout",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site DERMIX + checkout com integração Pix (SigiloPay) via Vercel Functions"
+}
