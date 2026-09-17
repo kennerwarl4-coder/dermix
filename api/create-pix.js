@@ -10,6 +10,9 @@ import { kvSet } from '../lib/kv.js';
 
 const KIT_PRICE = 137.90;
 const PIX_DISCOUNT = 6.90; // 5% de desconto no Pix (137.90 -> 131.00)
+// Valor final calculado com arredondamento explicito: 137.90 - 6.90 em ponto flutuante
+// pode virar 131.00000000000003 em JS, e a SigiloPay rejeita esse formato com 400.
+const PIX_TOTAL = Math.round((KIT_PRICE - PIX_DISCOUNT) * 100) / 100;
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -46,7 +49,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         identifier: identifier,
-        amount: KIT_PRICE - PIX_DISCOUNT,
+        amount: PIX_TOTAL,
         discount: PIX_DISCOUNT,
         client: {
           name: customer.name,
@@ -70,8 +73,10 @@ export default async function handler(req, res) {
     const data = await sigiloRes.json();
 
     if (!sigiloRes.ok || data.status === 'FAILED') {
+      console.error('SigiloPay rejeitou a cobranca:', sigiloRes.status, JSON.stringify(data));
       return res.status(sigiloRes.status || 400).json({
         error: data.errorDescription || data.message || 'Falha ao criar cobranca Pix.',
+        details: data.details || undefined,
       });
     }
 
@@ -81,7 +86,7 @@ export default async function handler(req, res) {
       {
         status: data.transactionStatus || 'PENDING',
         webhookToken: data.webhookToken || null,
-        amount: KIT_PRICE - PIX_DISCOUNT,
+        amount: PIX_TOTAL,
         customer: customer,
         fbp: tracking.fbp || '',
         fbc: tracking.fbc || '',
