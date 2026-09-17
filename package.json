@@ -2,5 +2,11 @@
   "name": "dermix-checkout",
   "version": "1.0.0",
   "private": true,
-  "description": "Site DERMIX + checkout com integração Pix (SigiloPay) via Vercel Functions"
+  "description": "Site DERMIX + checkout com integração Pix (SigiloPay) via Vercel Functions",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/tailwind-input.css -o ./assets/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
 }

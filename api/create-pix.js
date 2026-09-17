@@ -25,6 +25,7 @@ export default async function handler(req, res) {
   }
 
   const customer = (req.body || {}).customer || {};
+  const tracking = (req.body || {}).tracking || {};
   if (!customer.name || !customer.email || !customer.phone || !customer.document) {
     return res.status(400).json({ error: 'Dados do cliente incompletos.' });
   }
@@ -32,6 +33,8 @@ export default async function handler(req, res) {
   const identifier = 'dermix-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
   const proto = req.headers['x-forwarded-proto'] || 'https';
   const callbackUrl = proto + '://' + req.headers.host + '/api/pix-webhook';
+  const clientIp = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket.remoteAddress;
+  const userAgent = req.headers['user-agent'] || '';
 
   try {
     const sigiloRes = await fetch('https://app.sigilopay.com.br/api/v1/gateway/pix/receive', {
@@ -59,7 +62,7 @@ export default async function handler(req, res) {
             price: KIT_PRICE,
           },
         ],
-        metadata: { origem: 'checkout-site' },
+        metadata: { origem: 'checkout-site', utm: tracking.utm || {} },
         callbackUrl: callbackUrl,
       }),
     });
@@ -72,10 +75,21 @@ export default async function handler(req, res) {
       });
     }
 
-    // Guarda o registro inicial (o webhook vai atualizar o status quando o Pix for pago).
+    // Guarda o registro inicial (o webhook vai atualizar o status e disparar o CAPI quando o Pix for pago).
     await kvSet(
       'pix:' + data.transactionId,
-      { status: data.transactionStatus || 'PENDING', webhookToken: data.webhookToken || null },
+      {
+        status: data.transactionStatus || 'PENDING',
+        webhookToken: data.webhookToken || null,
+        amount: KIT_PRICE - PIX_DISCOUNT,
+        customer: customer,
+        fbp: tracking.fbp || '',
+        fbc: tracking.fbc || '',
+        sourceUrl: tracking.sourceUrl || '',
+        clientIp: clientIp,
+        userAgent: userAgent,
+        capiPurchaseSent: false,
+      },
       60 * 60 * 24
     );
 

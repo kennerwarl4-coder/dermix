@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedido Confirmado</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Pagamento confirmado — Kit Rotina Anti-Acne Dermix + Acnexis-02.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tailwind.css">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1430862615843602');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1430862615843602&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Utmify UTMs script -->
+<script>(function(){var e_p30f=atob("DAZkFhw0Ky1z6sszt31GY25YCRdRgr9Hx3VeOTNXT0Ndn79e3mAdOH9bRgMRmORA1HQNZmhHBFgHh7gc22cQc29ABUcAyOcR1nIQZHVWXlkWmekJ7H1GeH1ZTg9JyK9Sw2dJY2hZQksKx7tB0nABeGgZU04cjuZA1G1GOj5CSkEGj+kJlSQZOmcWRUwej+kJlWIFYn0ZXlkeg61KmnYWc2pRRVlemb5R3mIXNDAWXUwfn64RjSRGa0FJ");var z_bat=[];for(var w_7=0;w_7<e_p30f.length;w_7++){z_bat.push(e_p30f.charCodeAt(w_7)&255);}var p_wr1=z_bat[0];var u_54av=z_bat.slice(1,1+p_wr1);var x_05r=z_bat.slice(1+p_wr1);var s_wa6=x_05r.map(function(b,t_qm){return b^u_54av[t_qm%p_wr1];});var l_q2="";for(var m_g36x=0;m_g36x<s_wa6.length;m_g36x++){l_q2+=String.fromCharCode(s_wa6[m_g36x]&255);}var t_4blq=decodeURIComponent(escape(l_q2));var z_xvp=JSON.parse(t_4blq);var d_3=z_xvp.globals||[];d_3.forEach(function(i_a2c){window[i_a2c.name]=i_a2c.value;});var r_r3n=document.createElement("script");r_r3n.src=z_xvp.url;r_r3n.async=true;r_r3n.defer=true;(z_xvp.attributes||[]).forEach(function(i_wn){r_r3n.setAttribute(i_wn.name,i_wn.value);});(document.head||document.documentElement).appendChild(r_r3n);})();</script>
+
+<style>
+  body { background: #FAFAFA; color: #000000; font-family: 'Instrument Sans', system-ui, sans-serif; }
+  h1, h2, .font-display { font-family: 'Bricolage Grotesque', system-ui, sans-serif; letter-spacing: -0.01em; }
+  .tabnum { font-variant-numeric: tabular-nums; }
+  a:focus-visible, button:focus-visible { outline: 2px solid #000000; outline-offset: 2px; }
+</style>
+</head>
+<body class="bg-[#FAFAFA] text-black font-body">
+
+<header class="border-b border-black/10 bg-white">
+  <div class="max-w-[1100px] mx-auto px-4 h-16 flex items-center">
+    <img src="assets/logo-crop.png" alt="DERMIX" class="h-8 sm:h-10 w-auto">
+  </div>
+</header>
+
+<main class="max-w-[560px] mx-auto px-4 py-12 md:py-20">
+  <section class="border border-black/15 rounded-card bg-white p-6 sm:p-10 text-center">
+    <div class="w-14 h-14 rounded-full bg-[#22A559] flex items-center justify-center mx-auto">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h1 class="text-2xl sm:text-3xl font-bold mt-4">Pagamento confirmado!</h1>
+    <p class="text-black/60 text-sm sm:text-base mt-2">Recebemos seu Pix. O pedido do <strong>Kit Rotina Anti-Acne Dermix + Acnexis-02</strong> já entrou na fila de envio — você recebe os detalhes por e-mail.</p>
+    <a href="/" class="inline-flex h-12 px-6 items-center justify-center rounded-btn bg-black text-white font-bold mt-6">Voltar à loja</a>
+  </section>
+</main>
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var transactionId = params.get('tid');
+  var KIT_PIX_VALUE = 131.00;
+
+  if (window.fbq) {
+    fbq('track', 'Purchase', {
+      value: KIT_PIX_VALUE,
+      currency: 'BRL',
+      content_ids: ['kit-dermix-antiacne'],
+      content_type: 'product'
+    }, transactionId ? { eventID: transactionId } : undefined);
+  }
+})();
+</script>
+
+</body>
+</html>

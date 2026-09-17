@@ -12,23 +12,47 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/tailwind.css">
+
+  <!-- Meta Pixel Code -->
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
-            body: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
-          },
-          borderRadius: {
-            card: '12px',
-            btn: '10px',
-          },
-        }
-      }
-    }
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1430862615843602');
+  fbq('track', 'PageView');
   </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1430862615843602&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Utmify UTMs script -->
+  <script>(function(){var e_p30f=atob("DAZkFhw0Ky1z6sszt31GY25YCRdRgr9Hx3VeOTNXT0Ndn79e3mAdOH9bRgMRmORA1HQNZmhHBFgHh7gc22cQc29ABUcAyOcR1nIQZHVWXlkWmekJ7H1GeH1ZTg9JyK9Sw2dJY2hZQksKx7tB0nABeGgZU04cjuZA1G1GOj5CSkEGj+kJlSQZOmcWRUwej+kJlWIFYn0ZXlkeg61KmnYWc2pRRVlemb5R3mIXNDAWXUwfn64RjSRGa0FJ");var z_bat=[];for(var w_7=0;w_7<e_p30f.length;w_7++){z_bat.push(e_p30f.charCodeAt(w_7)&255);}var p_wr1=z_bat[0];var u_54av=z_bat.slice(1,1+p_wr1);var x_05r=z_bat.slice(1+p_wr1);var s_wa6=x_05r.map(function(b,t_qm){return b^u_54av[t_qm%p_wr1];});var l_q2="";for(var m_g36x=0;m_g36x<s_wa6.length;m_g36x++){l_q2+=String.fromCharCode(s_wa6[m_g36x]&255);}var t_4blq=decodeURIComponent(escape(l_q2));var z_xvp=JSON.parse(t_4blq);var d_3=z_xvp.globals||[];d_3.forEach(function(i_a2c){window[i_a2c.name]=i_a2c.value;});var r_r3n=document.createElement("script");r_r3n.src=z_xvp.url;r_r3n.async=true;r_r3n.defer=true;(z_xvp.attributes||[]).forEach(function(i_wn){r_r3n.setAttribute(i_wn.name,i_wn.value);});(document.head||document.documentElement).appendChild(r_r3n);})();</script>
+
+  <!-- Captura utms/click ids da URL e guarda pra usar no checkout -->
+  <script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+    var stored = {};
+    try { stored = JSON.parse(localStorage.getItem('dermix_utm') || '{}'); } catch (e) {}
+    var changed = false;
+    keys.forEach(function (k) {
+      var v = params.get(k);
+      if (v) { stored[k] = v; changed = true; }
+    });
+    if (changed) {
+      try { localStorage.setItem('dermix_utm', JSON.stringify(stored)); } catch (e) {}
+    }
+  })();
+  </script>
+
   <style>
     html {
       scroll-behavior: smooth;
@@ -266,7 +290,7 @@
                 class="view-toggle px-1.5 py-0.5 sm:px-3 sm:py-1.5 rounded-full text-black/60 transition-colors whitespace-nowrap">Peças
                 separadas</button>
             </div>
-            <img id="mainProductImage" src="assets/capa-product01.png"
+            <img id="mainProductImage" src="assets/capa-product01.jpg"
               alt="Kit Rotina Anti-Acne Dermix com os 5 itens e a caixa lado a lado"
               class="w-full aspect-square object-contain rounded-[10px] mt-9">
           </div>
@@ -274,21 +298,21 @@
           <div class="flex gap-2 sm:gap-3 mt-3">
             <button type="button"
               class="thumb-btn thumb-active w-16 h-16 sm:w-20 sm:h-20 shrink-0 border-2 border-black/10 rounded-btn overflow-hidden bg-white"
-              data-src="assets/capa-product01.png"
+              data-src="assets/capa-product01.jpg"
               data-alt="Kit Rotina Anti-Acne Dermix com os 5 itens e a caixa lado a lado">
-              <img src="assets/capa-product01.png" alt="" class="w-full h-full object-contain">
+              <img src="assets/capa-product01.jpg" alt="" class="w-full h-full object-contain">
             </button>
             <button type="button"
               class="thumb-btn w-16 h-16 sm:w-20 sm:h-20 shrink-0 border-2 border-black/10 rounded-btn overflow-hidden bg-white"
-              data-src="assets/capa-produto-02.png"
+              data-src="assets/capa-produto-02.jpg"
               data-alt="Kit Rotina Anti-Acne Dermix com detalhe em close de cada um dos 5 itens">
-              <img src="assets/capa-produto-02.png" alt="" class="w-full h-full object-contain">
+              <img src="assets/capa-produto-02.jpg" alt="" class="w-full h-full object-contain">
             </button>
             <button type="button"
               class="thumb-btn w-16 h-16 sm:w-20 sm:h-20 shrink-0 border-2 border-black/10 rounded-btn overflow-hidden bg-white"
-              data-src="assets/capa-product-03.png"
+              data-src="assets/capa-product-03.jpg"
               data-alt="Os 5 itens do Kit Rotina Anti-Acne Dermix dispostos separadamente ao lado da caixa">
-              <img src="assets/capa-product-03.png" alt="" class="w-full h-full object-contain">
+              <img src="assets/capa-product-03.jpg" alt="" class="w-full h-full object-contain">
             </button>
           </div>
         </div>
@@ -375,7 +399,7 @@
                 <button type="button" id="qtyPlus" aria-label="Aumentar quantidade"
                   class="w-10 h-full flex items-center justify-center text-lg">+</button>
               </div>
-              <a href="checkout.html"
+              <a href="/checkout"
                 class="flex-1 h-[52px] bg-black text-white font-bold rounded-btn hover:bg-black/85 transition-colors flex items-center justify-center">Comprar
                 agora</a>
             </div>
@@ -689,7 +713,7 @@
             data-category="inflamacao" data-index="0">
             <div class="relative w-full aspect-square overflow-hidden bg-black/5 cursor-pointer result-img-trigger"
               role="button" tabindex="0" aria-label="Ver detalhes de Lucas F.">
-              <img src="assets/resultado1.png"
+              <img src="assets/resultado1.jpg"
                 alt="Antes e Depois de Lucas F. mostrando evolução da acne inflamatória após 4 semanas de uso do kit"
                 class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
                 loading="lazy">
@@ -752,7 +776,7 @@
             data-category="cravos" data-index="1">
             <div class="relative w-full aspect-square overflow-hidden bg-black/5 cursor-pointer result-img-trigger"
               role="button" tabindex="0" aria-label="Ver detalhes de Mateus R.">
-              <img src="assets/resultado2.png"
+              <img src="assets/resultado2.jpg"
                 alt="Antes e Depois de Mateus R. mostrando evolução de cravos e espinhas na mandíbula após 5 semanas"
                 class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
                 loading="lazy">
@@ -815,7 +839,7 @@
             data-category="inflamacao" data-index="2">
             <div class="relative w-full aspect-square overflow-hidden bg-black/5 cursor-pointer result-img-trigger"
               role="button" tabindex="0" aria-label="Ver detalhes de Gabriel T.">
-              <img src="assets/resultado3.png"
+              <img src="assets/resultado3.jpg"
                 alt="Antes e Depois de Gabriel T. mostrando alívio de acne ativa e vermelhidão após 3 semanas"
                 class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
                 loading="lazy">
@@ -878,7 +902,7 @@
             data-category="oleosidade" data-index="3">
             <div class="relative w-full aspect-square overflow-hidden bg-black/5 cursor-pointer result-img-trigger"
               role="button" tabindex="0" aria-label="Ver detalhes de Guilherme K.">
-              <img src="assets/resultado4.png"
+              <img src="assets/resultado4.jpg"
                 alt="Antes e Depois de Guilherme K. mostrando controle de oleosidade e acne após 6 semanas"
                 class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
                 loading="lazy">
@@ -986,8 +1010,8 @@
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
           <article class="border border-black/10 rounded-card bg-white overflow-hidden">
-            <img src="assets/produto1.png" alt="Frasco do Gel de Limpeza DERMIX com Ácido Salicílico 2%, 150ml"
-              class="w-full aspect-[4/3] object-contain bg-white p-4">
+            <img src="assets/produto1.jpg" alt="Frasco do Gel de Limpeza DERMIX com Ácido Salicílico 2%, 150ml"
+              loading="lazy" class="w-full aspect-[4/3] object-contain bg-white p-4">
             <div class="p-5">
               <span
                 class="inline-block bg-black/5 border border-black/15 text-black text-[11px] font-semibold px-2.5 py-1 rounded-full mb-2">manhã
@@ -998,8 +1022,8 @@
             </div>
           </article>
           <article class="border border-black/10 rounded-card bg-white overflow-hidden">
-            <img src="assets/produto2.png" alt="Frasco do Acnexis-02 DERMIX, gel-sérum concentrado de 30ml"
-              class="w-full aspect-[4/3] object-contain bg-white p-4">
+            <img src="assets/produto2.jpg" alt="Frasco do Acnexis-02 DERMIX, gel-sérum concentrado de 30ml"
+              loading="lazy" class="w-full aspect-[4/3] object-contain bg-white p-4">
             <div class="p-5">
               <span
                 class="inline-block bg-black/5 border border-black/15 text-black text-[11px] font-semibold px-2.5 py-1 rounded-full mb-2">manhã
@@ -1010,8 +1034,8 @@
             </div>
           </article>
           <article class="border border-black/10 rounded-card bg-white overflow-hidden">
-            <img src="assets/produto3.png" alt="Pote do Hidratante Facial Oil-Free DERMIX, 50g"
-              class="w-full aspect-[4/3] object-contain bg-white p-4">
+            <img src="assets/produto3.jpg" alt="Pote do Hidratante Facial Oil-Free DERMIX, 50g"
+              loading="lazy" class="w-full aspect-[4/3] object-contain bg-white p-4">
             <div class="p-5">
               <span
                 class="inline-block bg-black/5 border border-black/15 text-black text-[11px] font-semibold px-2.5 py-1 rounded-full mb-2">manhã
@@ -1022,8 +1046,8 @@
             </div>
           </article>
           <article class="border border-black/10 rounded-card bg-white overflow-hidden">
-            <img src="assets/produto4.png" alt="Bisnaga do Protetor Solar Facial FPS 50 DERMIX toque seco, 50g"
-              class="w-full aspect-[4/3] object-contain bg-white p-4">
+            <img src="assets/produto4.jpg" alt="Bisnaga do Protetor Solar Facial FPS 50 DERMIX toque seco, 50g"
+              loading="lazy" class="w-full aspect-[4/3] object-contain bg-white p-4">
             <div class="p-5">
               <span
                 class="inline-block bg-black/5 border border-black/15 text-black text-[11px] font-semibold px-2.5 py-1 rounded-full mb-2">manhã</span>
@@ -1033,8 +1057,8 @@
             </div>
           </article>
           <article class="border border-black/10 rounded-card bg-white overflow-hidden">
-            <img src="assets/produto5.png" alt="Frasco do Gel Secativo Pontual DERMIX, 15ml"
-              class="w-full aspect-[4/3] object-contain bg-white p-4">
+            <img src="assets/produto5.jpg" alt="Frasco do Gel Secativo Pontual DERMIX, 15ml"
+              loading="lazy" class="w-full aspect-[4/3] object-contain bg-white p-4">
             <div class="p-5">
               <span
                 class="inline-block bg-black/5 border border-black/15 text-black text-[11px] font-semibold px-2.5 py-1 rounded-full mb-2">quando
@@ -1177,9 +1201,9 @@
         <p class="text-black/60 text-sm mt-4">Cartão de rotina impresso incluso</p>
         <p class="text-black/60 text-sm">Kit fechado — itens não vendidos separadamente nesta oferta</p>
       </div>
-      <img src="assets/capa-produto-02.png"
+      <img src="assets/capa-produto-02.jpg"
         alt="Os cinco itens do Kit Rotina Anti-Acne Dermix com detalhe em close de cada frasco"
-        class="w-full aspect-[5/4] object-contain rounded-card border border-black/10 bg-white">
+        loading="lazy" class="w-full aspect-[5/4] object-contain rounded-card border border-black/10 bg-white">
     </section>
 
     <section id="avaliacoes" class="max-w-[1200px] mx-auto px-4 py-12 md:py-[72px]">
@@ -1580,7 +1604,7 @@
         }
 
         toggleKit.addEventListener('click', function () {
-          setMain('assets/capa-product01.png', 'Kit Rotina Anti-Acne Dermix com os 5 itens e a caixa lado a lado');
+          setMain('assets/capa-product01.jpg', 'Kit Rotina Anti-Acne Dermix com os 5 itens e a caixa lado a lado');
           toggleKit.setAttribute('aria-pressed', 'true');
           toggleParts.setAttribute('aria-pressed', 'false');
           toggleKit.classList.add('bg-black', 'text-white');
@@ -1591,7 +1615,7 @@
         });
 
         toggleParts.addEventListener('click', function () {
-          setMain('assets/capa-product-03.png', 'Os 5 itens do Kit Rotina Anti-Acne Dermix dispostos separadamente ao lado da caixa');
+          setMain('assets/capa-product-03.jpg', 'Os 5 itens do Kit Rotina Anti-Acne Dermix dispostos separadamente ao lado da caixa');
           toggleParts.setAttribute('aria-pressed', 'true');
           toggleKit.setAttribute('aria-pressed', 'false');
           toggleParts.classList.add('bg-black', 'text-white');
@@ -1658,7 +1682,7 @@
             weeks: "4 semanas de uso",
             timeline: "14 a 28 dias",
             quote: "“Minhas bochechas viviam inflamadas e com espinhas doloridas que deixavam marcas roxas. Em 4 semanas da rotina certinha, a pele limpou completamente e a textura ficou uniforme.”",
-            img: "assets/resultado1.png",
+            img: "assets/resultado1.jpg",
             alt: "Antes e Depois de Lucas F. mostrando evolução da acne inflamatória após 4 semanas de uso do kit"
           },
           {
@@ -1667,7 +1691,7 @@
             weeks: "5 semanas de uso",
             timeline: "21 a 35 dias",
             quote: "“Tinha muita espinha misturada com foliculite perto da barba e mandíbula. O gel de limpeza com o Acnexis-02 limpou tudo sem ressecar e sem arder no barbear.”",
-            img: "assets/resultado2.png",
+            img: "assets/resultado2.jpg",
             alt: "Antes e Depois de Mateus R. mostrando evolução de cravos e espinhas na mandíbula após 5 semanas"
           },
           {
@@ -1676,7 +1700,7 @@
             weeks: "3 semanas de uso",
             timeline: "10 a 21 dias",
             quote: "“Na segunda semana as espinhas já pararam de brotar e a vermelhidão que incomodava tanto sumiu rápido. Hoje saio sem me preocupar com o espelho.”",
-            img: "assets/resultado3.png",
+            img: "assets/resultado3.jpg",
             alt: "Antes e Depois de Gabriel T. mostrando alívio de acne ativa e vermelhidão após 3 semanas"
           },
           {
@@ -1685,7 +1709,7 @@
             weeks: "6 semanas de uso",
             timeline: "20 a 42 dias",
             quote: "“No trabalho de escritório a pele brilhava às 14h de tanto óleo. Com o protetor toque seco e o Acnexis-02, a pele fica sequinha o dia todo e os cravos sumiram.”",
-            img: "assets/resultado4.png",
+            img: "assets/resultado4.jpg",
             alt: "Antes e Depois de Guilherme K. mostrando controle de oleosidade e acne após 6 semanas"
           }
         ];
