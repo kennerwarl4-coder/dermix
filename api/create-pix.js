@@ -34,8 +34,11 @@ export default async function handler(req, res) {
   }
 
   const identifier = 'dermix-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
-  const proto = req.headers['x-forwarded-proto'] || 'https';
-  const callbackUrl = proto + '://' + req.headers.host + '/api/pix-webhook';
+  // URL fixa, sempre a mesma string — nao monta a partir de headers da requisicao
+  // (que podem variar entre http/https e criar uma "URL nova" a cada chamada aos
+  // olhos da SigiloPay, estourando o limite de 20 webhooks). Configuravel via env
+  // var pra funcionar em qualquer domínio sem mudar codigo.
+  const callbackUrl = (process.env.PUBLIC_SITE_URL || 'https://dermix-self.vercel.app') + '/api/pix-webhook';
   const clientIp = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket.remoteAddress;
   const userAgent = req.headers['user-agent'] || '';
 
